@@ -25,7 +25,7 @@
               <% end %>
               <b><%= current_user.username %></b>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
               <%= link_to edit_user_registration_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
                 <div class="fa fa-cog"></div>
                 <b>Account settings</b>

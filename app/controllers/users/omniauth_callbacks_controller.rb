@@ -20,4 +20,8 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
       redirect_to new_user_registration_url, alert: @user.errors.full_messages.join("\n")
     end
   end
+
+  def failure
+    redirect_to root_path, alert: "Something went wrong. Please try again."
+  end
 end
