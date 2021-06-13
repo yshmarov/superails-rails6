@@ -1,0 +1,9 @@
+<h1>
+  Users:
+  <%= @users.length %>
+</h1>
+
+<% @users.each do |user| %>
+  <%= render 'users/user', user: user %>
+  <br>
+<% end %>
