@@ -1,3 +1,29 @@
+<b><%= 'id'.humanize %>:</b>
 <%= user.id %>
+<br>
+<b><%= 'email'.humanize %>:</b>
 <%= link_to_unless_current user.email, user %>
+<br>
+<b><%= 'name'.humanize %>:</b>
 <%= user.name %>
+<br>
+<b><%= 'provider'.humanize %>:</b>
+<%= user.provider %>
+<br>
+<b><%= 'uid'.humanize %>:</b>
+<%= user.uid %>
+<br>
+<b><%= 'sign_in_count'.humanize %>:</b>
+<%= user.sign_in_count %>
+<br>
+<b><%= 'current_sign_in_at'.humanize %>:</b>
+<%= user.current_sign_in_at %>
+<br>
+<b><%= 'last_sign_in_at'.humanize %>:</b>
+<%= user.last_sign_in_at %>
+<br>
+<b><%= 'current_sign_in_ip'.humanize %>:</b>
+<%= user.current_sign_in_ip %>
+<br>
+<b><%= 'last_sign_in_ip'.humanize %>:</b>
+<%= user.last_sign_in_ip %>
