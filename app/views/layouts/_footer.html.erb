@@ -1,0 +1,25 @@
+<div class="bg-light text-center">
+  <br>
+  <div class="container">
+    <div class="row align-items-start">
+      <div class="col">
+        <%= link_to root_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
+          <div class="fa fa-home"></div>
+          Superails.com
+        <% end %>
+      </div>
+      <div class="col">
+        <%= link_to privacy_path, class: "#{'active fw-bold' if current_page?(privacy_path)}" do %>
+          <div class="fa fa-file-contract"></div>
+          Privacy
+        <% end %>
+      </div>
+      <div class="col">
+        <%= link_to terms_path, class: "#{'active fw-bold' if current_page?(terms_path)}" do %>
+          <div class="fa fa-file-contract"></div>
+          Terms
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

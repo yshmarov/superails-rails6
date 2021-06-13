@@ -13,14 +13,6 @@
           <div class="fa fa-home"></div>
           Home
         <% end %>
-        <%= link_to privacy_path, class: "nav-link #{'active fw-bold' if current_page?(privacy_path)}" do %>
-          <div class="fa fa-file-contract"></div>
-          Privacy
-        <% end %>
-        <%= link_to terms_path, class: "nav-link #{'active fw-bold' if current_page?(terms_path)}" do %>
-          <div class="fa fa-file-contract"></div>
-          Terms
-        <% end %>
       </ul>
       <ul class="navbar-nav ms-auto">
         <% if current_user %>

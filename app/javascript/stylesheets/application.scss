@@ -1,5 +1,22 @@
 @import "bootstrap";
 
+// app background color
 body { background-color: AntiqueWhite; }
 
+// bootstap links not underlined by default
 a { text-decoration :none; }
+
+// footer always on the bottom
+html {
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+footer {
+    margin-top: auto;
+}
