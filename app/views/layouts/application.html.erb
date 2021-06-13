@@ -9,11 +9,14 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
-  <body class="container">
-    <%= render 'layouts/messages' %>
+  <body>
     <%= render 'layouts/header' %>
-    <%= yield %>
+    <%= render 'layouts/messages' %>
+    <div class="container">
+      <%= yield %>
+    </div>
   </body>
 </html>
