@@ -1,7 +1,10 @@
 @import "bootstrap";
 
 // app background color
-body { background-color: AntiqueWhite; }
+body { 
+  background-color: AntiqueWhite; 
+  word-break: break-all;
+}
 
 // bootstap links not underlined by default
 a { text-decoration :none; }

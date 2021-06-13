@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
-      <i class="fas fa-flag"></i>
-      Brand
+      <%= image_tag "thumbnail.png", height: "30", alt: "logo", class: "d-inline-block align-top" %>
+      SupeRails
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,7 @@
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
               <% if current_user.image? %>
-                <%= image_tag current_user.image, size: "30x30", class: "rounded-circle" %>
+                <%= image_tag current_user.image, size: "30x30", class: "rounded-circle d-inline-block align-top" %>
               <% else %>
                 <div class="fa fa-user"></div>
               <% end %>
