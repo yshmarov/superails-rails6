@@ -4,8 +4,9 @@ Rails.application.configure do
   config.hosts = nil
 
   config.action_mailer.default_url_options = { host: 'https://62e899a2bca14d098c1453faac1fab6b.vfs.cloud9.eu-central-1.amazonaws.com' }
+  # config.action_mailer.delivery_method = :test
+  config.action_mailer.delivery_method = :letter_opener
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.delivery_method = :test
 
   # Settings specified here will take precedence over those in config/application.rb.
 

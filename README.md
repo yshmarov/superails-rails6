@@ -22,3 +22,11 @@ Things you may want to cover:
 * Deployment instructions
 
 * ...
+* 
+
+letter opener on cloud9
+```
+printenv
+export BROWSER=/dev/null
+export LAUNCHY_DRY_RUN=true
+```
