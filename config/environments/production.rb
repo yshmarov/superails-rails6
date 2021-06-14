@@ -1,6 +1,17 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  config.action_mailer.default_url_options = { host: 'superails.com', protocol: 'https' }
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address:              'email-smtp.eu-central-1.amazonaws.com',
+    port:                 587,
+    user_name:            Rails.application.credentials.dig(:aws, :ses, :id),
+    password:             Rails.application.credentials.dig(:aws, :ses, :secret),
+    authentication:       :plain,
+    enable_starttls_auto: true }
+
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
