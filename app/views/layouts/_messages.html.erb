@@ -1,2 +1,8 @@
-<p class="notice"><%= notice %></p>
-<p class="alert"><%= alert %></p>
+<% flash.each do |key, value| %>
+  <div class="card-body list-group-item-<%= key.to_s == 'notice' ? 'success' : 'danger' %>" role="message">
+    <a data-dismiss="message" href="#">
+      <i class="fa fa-times"></i>
+    </a>
+    <%= value %>
+  </div>
+<% end %>

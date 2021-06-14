@@ -10,12 +10,12 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <%= link_to root_path, class: "nav-link #{'active fw-bold' if current_page?(root_path)}" do %>
-          <div class="fa fa-home"></div>
+          <i class="fa fa-home"></i>
           Home
         <% end %>
         <% if current_user %>
           <%= link_to users_path, class: "nav-link #{'active fw-bold' if current_page?(users_path)}" do %>
-            <div class="fa fa-users"></div>
+            <i class="fa fa-users"></i>
             Users
           <% end %>
         <% end %>
@@ -27,21 +27,21 @@
               <% if current_user.image? %>
                 <%= image_tag current_user.image, size: "30x30", class: "rounded-circle d-inline-block align-top" %>
               <% else %>
-                <div class="fa fa-user"></div>
+                <i class="fa fa-user"></i>
               <% end %>
               <b><%= current_user.username %></b>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
               <%= link_to user_path(current_user), class: "dropdown-item #{'active fw-bold' if current_page?(user_path(current_user))}" do %>
-                <div class="fa fa-user"></div>
+                <i class="fa fa-user"></i>
                 <b>My Profile</b>
               <% end %>
               <%= link_to edit_user_registration_path, class: "dropdown-item #{'active fw-bold' if current_page?(edit_user_registration_path)}" do %>
-                <div class="fa fa-cog"></div>
+                <i class="fa fa-cog"></i>
                 <b>Account settings</b>
               <% end %>
               <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-                <div class="fa fa-sign-out-alt"></div>
+                <i class="fa fa-sign-out-alt"></i>
                 <b>Sign out</b>
               <% end %>
             </ul>
