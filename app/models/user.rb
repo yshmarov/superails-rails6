@@ -1,8 +1,8 @@
 class User < ApplicationRecord
-  # :confirmable, :lockable, :timeoutable 
+  # :lockable, :timeoutable 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
-         :trackable,
+         :trackable, :confirmable,
          :omniauthable, omniauth_providers: [:google_oauth2, :github] 
 
   def self.from_omniauth(access_token)
@@ -19,6 +19,8 @@ class User < ApplicationRecord
     user.uid = access_token.uid
     user.name = access_token.info.name
     user.image = access_token.info.image
+    # user.confirmed_at = Time.zone.now
+    user.skip_confirmation!
     user.save
 
     user
