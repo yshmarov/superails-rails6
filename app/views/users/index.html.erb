@@ -1,7 +1,10 @@
 <h1>
   Users:
-  <%= @users.length %>
+  <%= @users.length %>/
+  <%= User.count %>
 </h1>
+
+<%== pagy_bootstrap_nav(@pagy) %>
 
 <% @users.each do |user| %>
   <%= render 'users/user', user: user %>
