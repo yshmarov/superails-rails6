@@ -6,6 +6,25 @@
 
 <%== pagy_bootstrap_nav(@pagy) %>
 
+<%= sort_link(@q, :email) do %>
+  <strong>Email</strong>
+<% end %>
+
+<%= search_form_for @q do |f| %>
+  <%= f.label :email_cont %>
+  <%= f.search_field :email_cont %>
+
+  <%= f.submit %>
+<% end %>
+
+<% if params[:q].present? %>
+  <%= link_to users_path do %>
+    <i class="fa fa-sync"></i>
+  <% end %>
+<% end %>
+
+<hr>
+
 <% @users.each do |user| %>
   <%= render 'users/user', user: user %>
   <hr>
