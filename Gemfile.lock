@@ -1,4 +1,12 @@
 GIT
+  remote: https://github.com/faker-ruby/faker.git
+  revision: 8e8ae220eadaa0c036999b7711106b1a84c372d9
+  branch: master
+  specs:
+    faker (2.18.0)
+      i18n (>= 1.6, < 2)
+
+GIT
   remote: https://github.com/omniauth/omniauth-github.git
   revision: 1f772263c6cc00e84dabbc02beb755ba4c95f7d1
   branch: master
@@ -272,6 +280,7 @@ DEPENDENCIES
   byebug
   capybara (>= 3.26)
   devise
+  faker!
   jbuilder (~> 2.7)
   letter_opener
   listen (~> 3.3)
