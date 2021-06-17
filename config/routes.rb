@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   get 'privacy', to: 'static_public#privacy'
   get 'terms', to: 'static_public#terms'
 
+  resources :posts
+
   resources :users, only: %i[index show]
+
 end
