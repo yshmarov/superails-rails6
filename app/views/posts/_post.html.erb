@@ -7,6 +7,8 @@
 On <%= post.created_at.strftime('%d %b %Y') %>
 by <%= link_to post.user.username, post.user %>
 
+<%= premium_label(post.premium) %>
+
 <br>
 
 <%= link_to 'Edit', edit_post_path(post) %>
