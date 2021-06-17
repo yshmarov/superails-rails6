@@ -29,7 +29,7 @@
 <%= user.last_sign_in_ip %>
 <br>
 <b><%= 'confirmed'.humanize %>:</b>
-<%= user.confirmed? %>
+<%= boolean_label(user.confirmed?) %>
 <br>
 <b><%= 'created_at'.humanize %>:</b>
 <%= user.created_at.strftime('%d %b %Y') %>

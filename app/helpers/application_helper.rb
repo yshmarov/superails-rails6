@@ -23,4 +23,14 @@ module ApplicationHelper
     end 
   end
 
+  def boolean_label(value)
+    case value
+    when true
+      badge_color = 'badge bg-success'
+    when false
+      badge_color = 'badge bg-danger'
+    end
+    content_tag(:span, value, class: badge_color)
+  end
+
 end
