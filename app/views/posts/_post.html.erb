@@ -1,0 +1,13 @@
+<h3>
+  <%= link_to_unless_current post.title, post %>
+</h3>
+
+<%= simple_format(post.body) %>
+
+On <%= post.created_at.strftime('%d %b %Y') %>
+by <%= link_to post.user.username, post.user %>
+
+<br>
+
+<%= link_to 'Edit', edit_post_path(post) %>
+<%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>

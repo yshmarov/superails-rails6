@@ -14,6 +14,14 @@
           Home
         <% end %>
         <% if current_user %>
+          <%= deep_active_link_to new_post_path do %>
+            <i class="fa fa-plus"></i>
+            New Post
+          <% end %>
+          <%= deep_active_link_to posts_path do %>
+            <i class="fa fa-gem"></i>
+            Posts
+          <% end %>
           <%= deep_active_link_to users_path do %>
             <i class="fa fa-users"></i>
             Users

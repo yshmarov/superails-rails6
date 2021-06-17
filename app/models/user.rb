@@ -6,6 +6,7 @@ class User < ApplicationRecord
          :omniauthable, omniauth_providers: [:google_oauth2, :github] 
 
   has_many :invitees, class_name: 'User', foreign_key: :invited_by_id
+  has_many :posts, dependent: :restrict_with_error
 
   def self.from_omniauth(access_token)
     user = User.where(email: access_token.info.email).first

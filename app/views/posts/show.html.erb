@@ -7,12 +7,12 @@
 
 <p>
   <strong>Body:</strong>
-  <%= @post.body %>
+  <%= simple_format(@post.body) %>
 </p>
 
 <p>
   <strong>User:</strong>
-  <%= @post.user_id %>
+  <%= link_to @post.user.username, @post.user %>
 </p>
 
 <%= link_to 'Edit', edit_post_path(@post) %> |
