@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   resources :posts
 
+  resources :webhooks, only: [:create]
+
   resources :users, only: %i[index show]
 
 end
