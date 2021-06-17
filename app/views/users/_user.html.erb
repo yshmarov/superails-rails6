@@ -40,6 +40,9 @@
 <b><%= 'created_at'.humanize %>:</b>
 <%= user.created_at.strftime('%d %b %Y') %>
 <br>
+<b><%= 'stripe_customer_id'.humanize %>:</b>
+<%= user.stripe_customer_id %>
+<br>
 <b><%= 'posts_count'.humanize %>:</b>
 <%= user.posts_count %>
 <br>

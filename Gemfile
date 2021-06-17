@@ -65,3 +65,4 @@ gem 'pagy', '~> 3.5'
 gem 'ransack'
 gem 'devise_invitable', '~> 2.0.0'
 gem "redcarpet"
+gem 'stripe'
