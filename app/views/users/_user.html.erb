@@ -40,6 +40,9 @@
 <b><%= 'created_at'.humanize %>:</b>
 <%= user.created_at.strftime('%d %b %Y') %>
 <br>
+<b><%= 'posts_count'.humanize %>:</b>
+<%= user.posts_count %>
+<br>
 <b><%= 'invitees'.humanize %>:</b>
 <%= user.invitees.count %>
 <% user.invitees.each do |invitee| %>

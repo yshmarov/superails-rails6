@@ -12,6 +12,9 @@
 <%= sort_link(@q, :created_at) do %>
   <strong>Created</strong>
 <% end %>
+<%= sort_link(@q, :posts_count, default_order: :desc) do %>
+  <strong>Posts count</strong>
+<% end %>
 
 <%= search_form_for @q do |f| %>
   <%= f.label :email_cont %>
