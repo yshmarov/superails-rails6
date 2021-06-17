@@ -31,5 +31,17 @@
 <b><%= 'confirmed'.humanize %>:</b>
 <%= boolean_label(user.confirmed?) %>
 <br>
+<b><%= 'created_by_invite'.humanize %>:</b>
+<%= boolean_label(user.created_by_invite?) %>
+<br>
+<b><%= 'invitation_accepted_at'.humanize %>:</b>
+<%= boolean_label(user.invitation_accepted_at?) %>
+<br>
 <b><%= 'created_at'.humanize %>:</b>
 <%= user.created_at.strftime('%d %b %Y') %>
+<br>
+<b><%= 'invitees'.humanize %>:</b>
+<%= user.invitees.count %>
+<% user.invitees.each do |invitee| %>
+  <%= invitee.email %>
+<% end %>

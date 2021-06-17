@@ -63,3 +63,4 @@ gem "letter_opener", group: :development
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master', group: :development
 gem 'pagy', '~> 3.5'
 gem 'ransack'
+gem 'devise_invitable', '~> 2.0.0'
