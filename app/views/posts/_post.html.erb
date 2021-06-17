@@ -2,7 +2,7 @@
   <%= link_to_unless_current post.title, post %>
 </h3>
 
-<%= simple_format(post.body) %>
+<%= markdown(post.body) %>
 
 On <%= post.created_at.strftime('%d %b %Y') %>
 by <%= link_to post.user.username, post.user %>
