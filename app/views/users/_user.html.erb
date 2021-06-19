@@ -43,6 +43,15 @@
 <b><%= 'stripe_customer_id'.humanize %>:</b>
 <%= user.stripe_customer_id %>
 <br>
+<b><%= 'plan'.humanize %>:</b>
+<%= user.plan %>
+<br>
+<b><%= 'subscription_status'.humanize %>:</b>
+<%= user.subscription_status %>
+<br>
+<b><%= 'current_period_end'.humanize %>:</b>
+<%= user.current_period_end.strftime('%d %b %Y') if user.current_period_end %>
+<br>
 <b><%= 'posts_count'.humanize %>:</b>
 <%= user.posts_count %>
 <br>

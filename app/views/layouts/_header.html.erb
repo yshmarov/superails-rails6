@@ -13,6 +13,10 @@
           <i class="fa fa-home"></i>
           Home
         <% end %>
+        <%= deep_active_link_to pricing_path do %>
+          <i class="fa fa-shopping-cart"></i>
+          Pricing
+        <% end %>
         <% if current_user %>
           <%= deep_active_link_to new_post_path do %>
             <i class="fa fa-plus"></i>
