@@ -8,6 +8,12 @@
 5.times do
   user = User.create(email: Faker::Internet.email, password: 123456)
   rand(0..5).times do
-    Post.create(title: Faker::Lorem.sentence(word_count: 3), body: Faker::Markdown.random, user: user)
+    Post.create(
+      title: Faker::Lorem.sentence(word_count: 3), 
+      body: Faker::Markdown.random, 
+      user: user, 
+      premium: [true, false].sample)
   end
 end
+p "#{User.count} users created"
+p "#{Post.count} posts created"

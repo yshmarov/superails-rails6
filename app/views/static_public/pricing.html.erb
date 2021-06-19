@@ -1,6 +1,7 @@
 <h1>Pricing</h1>
 
 <% @pricing.each do |price| %>
+  <br>
   <b>
     <%= price.product.name %>
   </b>
@@ -10,5 +11,7 @@
     <%= price.currency %>
     <%= price.recurring.interval %>
   </b>
-  <%= link_to "Pay #{price.unit_amount/100} per #{price.recurring.interval}", checkout_create_path(price: price.id), method: :post, remote: true, data: { disable_with: "validating..."} %>
+  <% if user_signed_in? %>
+    <%= link_to "Pay #{price.unit_amount/100} per #{price.recurring.interval}", checkout_create_path(price: price.id), method: :post, remote: true, data: { disable_with: "validating..."} %>
+  <% end %>
 <% end %>

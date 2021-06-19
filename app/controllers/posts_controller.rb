@@ -2,10 +2,17 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy ]
 
   def index
-    @posts = Post.all
+    if current_user.active?
+      @posts = Post.all
+    else
+      @posts = Post.free
+    end
   end
 
   def show
+    if @post.premium? && current_user.subscription_status != 'active'
+      redirect_to posts_path, alert: 'You are not a premium subscriber'
+    end
   end
 
   def new
