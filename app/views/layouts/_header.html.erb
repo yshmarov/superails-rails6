@@ -18,6 +18,7 @@
           Pricing
         <% end %>
         <% if current_user %>
+          <%= link_to "Manage Billing", billing_portal_create_path, method: :post, data: { disable_with: "validating..."}, class: 'nav-link' %>
           <%= deep_active_link_to new_post_path do %>
             <i class="fa fa-plus"></i>
             New Post
