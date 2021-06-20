@@ -1,5 +1,7 @@
 <div class='card'>
   <div class='card-body'>
+    <%= image_tag user.image, size: "30x30", class: "rounded-circle d-inline-block align-top" if user.image %>
+    <br>
     <b><%= 'id'.humanize %>:</b>
     <%= user.id %>
     <br>

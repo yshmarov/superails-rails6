@@ -12,7 +12,9 @@
   </div>
   <div class='card-footer'>
     On <%= post.created_at.strftime('%d %b %Y') %>
-    by <%= link_to post.user.username, post.user %>
+    by 
+    <%= image_tag post.user.image, size: "30x30", class: "rounded-circle d-inline-block align-top" if post.user.image %>
+    <%= link_to post.user.username, post.user %>
     <%= premium_label(post.premium) %>
   </div>
   <% if current_user == post.user %>

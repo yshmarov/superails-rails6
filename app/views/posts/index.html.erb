@@ -4,6 +4,26 @@
   <%= Post.count %>
 </h1>
 
+<%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
+
+<%= search_form_for @q do |f| %>
+  <%= f.label :title_cont %>
+  <%= f.search_field :title_cont %>
+
+  <%= f.label :user_name_cont %>
+  <%= f.search_field :user_name_cont %>
+
+  <%= f.submit %>
+<% end %>
+
+<% if params[:q].present? %>
+  <%= link_to users_path do %>
+    <i class="fa fa-sync"></i>
+  <% end %>
+<% end %>
+
+<hr>
+
 <% @posts.each do |post| %>
   <%= render 'posts/post', post: post %>
   <br>

@@ -3,7 +3,10 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy upvote downvote ]
 
   def index
-    @posts = Post.all.order(created_at: :desc)
+    # @posts = Post.all.order(created_at: :desc)
+    @q = Post.order(created_at: :desc).ransack(params[:q])
+    @pagy, @posts = pagy(@q.result.includes(:user))
+
     # if current_user&.active?
     #   @posts = Post.all
     # else
