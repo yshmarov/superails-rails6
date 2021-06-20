@@ -17,15 +17,15 @@
           <i class="fa fa-shopping-cart"></i>
           Pricing
         <% end %>
+        <%= deep_active_link_to posts_path do %>
+          <i class="fa fa-gem"></i>
+          Posts
+        <% end %>
         <% if current_user %>
           <%= link_to "Manage Billing", billing_portal_create_path, method: :post, data: { disable_with: "validating..."}, class: 'nav-link' %>
           <%= deep_active_link_to new_post_path do %>
             <i class="fa fa-plus"></i>
             New Post
-          <% end %>
-          <%= deep_active_link_to posts_path do %>
-            <i class="fa fa-gem"></i>
-            Posts
           <% end %>
           <%= deep_active_link_to users_path do %>
             <i class="fa fa-users"></i>
@@ -35,7 +35,6 @@
             <i class="fa fa-user-plus"></i>
             Invite a friend
           <% end %>
-
         <% end %>
       </ul>
       <ul class="navbar-nav ms-auto">

@@ -1,16 +1,18 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_user!, only: %i[index show]
   before_action :set_post, only: %i[ show edit update destroy ]
 
   def index
-    if current_user.active?
-      @posts = Post.all
-    else
-      @posts = Post.free
-    end
+    @posts = Post.all
+    # if current_user&.active?
+    #   @posts = Post.all
+    # else
+    #   @posts = Post.free
+    # end
   end
 
   def show
-    if @post.premium? && current_user.subscription_status != 'active'
+    if @post.premium? && current_user&.subscription_status != 'active'
       redirect_to posts_path, alert: 'You are not a premium subscriber'
     end
   end
@@ -20,6 +22,9 @@ class PostsController < ApplicationController
   end
 
   def edit
+    unless @post.user == current_user
+      redirect_to posts_path, alert: 'You are not authorized'
+    end
   end
 
   def create
@@ -33,16 +38,24 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
-      redirect_to @post, notice: "Post was successfully updated."
+    unless @post.user == current_user
+      redirect_to posts_path, alert: 'You are not authorized'
     else
-      render :edit, status: :unprocessable_entity
+      if @post.update(post_params)
+        redirect_to @post, notice: "Post was successfully updated."
+      else
+        render :edit, status: :unprocessable_entity
+      end
     end
   end
 
   def destroy
-    @post.destroy
-    redirect_to posts_url, notice: "Post was successfully destroyed."
+    unless @post.user == current_user
+      redirect_to posts_path, alert: 'You are not authorized'
+    else
+      @post.destroy
+      redirect_to posts_url, notice: "Post was successfully destroyed."
+    end
   end
 
   private

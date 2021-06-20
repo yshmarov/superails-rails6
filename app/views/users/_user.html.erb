@@ -1,62 +1,68 @@
-<b><%= 'id'.humanize %>:</b>
-<%= user.id %>
-<br>
-<b><%= 'email'.humanize %>:</b>
-<%= link_to_unless_current user.email, user %>
-<br>
-<b><%= 'name'.humanize %>:</b>
-<%= user.name %>
-<br>
-<b><%= 'provider'.humanize %>:</b>
-<%= user.provider %>
-<br>
-<b><%= 'uid'.humanize %>:</b>
-<%= user.uid %>
-<br>
-<b><%= 'sign_in_count'.humanize %>:</b>
-<%= user.sign_in_count %>
-<br>
-<b><%= 'current_sign_in_at'.humanize %>:</b>
-<%= user.current_sign_in_at %>
-<br>
-<b><%= 'last_sign_in_at'.humanize %>:</b>
-<%= user.last_sign_in_at %>
-<br>
-<b><%= 'current_sign_in_ip'.humanize %>:</b>
-<%= user.current_sign_in_ip %>
-<br>
-<b><%= 'last_sign_in_ip'.humanize %>:</b>
-<%= user.last_sign_in_ip %>
-<br>
-<b><%= 'confirmed'.humanize %>:</b>
-<%= boolean_label(user.confirmed?) %>
-<br>
-<b><%= 'created_by_invite'.humanize %>:</b>
-<%= boolean_label(user.created_by_invite?) %>
-<br>
-<b><%= 'invitation_accepted_at'.humanize %>:</b>
-<%= boolean_label(user.invitation_accepted_at?) %>
-<br>
-<b><%= 'created_at'.humanize %>:</b>
-<%= user.created_at.strftime('%d %b %Y') %>
-<br>
-<b><%= 'stripe_customer_id'.humanize %>:</b>
-<%= user.stripe_customer_id %>
-<br>
-<b><%= 'plan'.humanize %>:</b>
-<%= user.plan %>
-<br>
-<b><%= 'subscription_status'.humanize %>:</b>
-<%= user.subscription_status %>
-<br>
-<b><%= 'current_period_end'.humanize %>:</b>
-<%= user.current_period_end.strftime('%d %b %Y') if user.current_period_end %>
-<br>
-<b><%= 'posts_count'.humanize %>:</b>
-<%= user.posts_count %>
-<br>
-<b><%= 'invitees'.humanize %>:</b>
-<%= user.invitees.count %>
-<% user.invitees.each do |invitee| %>
-  <%= invitee.email %>
-<% end %>
+<div class='card'>
+  <div class='card-body'>
+    <b><%= 'id'.humanize %>:</b>
+    <%= user.id %>
+    <br>
+    <b><%= 'email'.humanize %>:</b>
+    <%= link_to_unless_current user.email, user %>
+    <br>
+    <b><%= 'name'.humanize %>:</b>
+    <%= user.name %>
+    <br>
+    <b><%= 'provider'.humanize %>:</b>
+    <%= user.provider %>
+    <br>
+    <b><%= 'uid'.humanize %>:</b>
+    <%= user.uid %>
+    <br>
+    <b><%= 'sign_in_count'.humanize %>:</b>
+    <%= user.sign_in_count %>
+    <br>
+    <b><%= 'current_sign_in_at'.humanize %>:</b>
+    <%= user.current_sign_in_at %>
+    <br>
+    <b><%= 'last_sign_in_at'.humanize %>:</b>
+    <%= user.last_sign_in_at %>
+    <br>
+    <b><%= 'current_sign_in_ip'.humanize %>:</b>
+    <%= user.current_sign_in_ip %>
+    <br>
+    <b><%= 'last_sign_in_ip'.humanize %>:</b>
+    <%= user.last_sign_in_ip %>
+    <br>
+    <b><%= 'confirmed'.humanize %>:</b>
+    <%= boolean_label(user.confirmed?) %>
+    <br>
+    <b><%= 'created_by_invite'.humanize %>:</b>
+    <%= boolean_label(user.created_by_invite?) %>
+    <br>
+    <b><%= 'invitation_accepted_at'.humanize %>:</b>
+    <%= boolean_label(user.invitation_accepted_at?) %>
+    <br>
+    <b><%= 'created_at'.humanize %>:</b>
+    <%= user.created_at.strftime('%d %b %Y') %>
+    <br>
+    <b><%= 'stripe_customer_id'.humanize %>:</b>
+    <%= user.stripe_customer_id %>
+    <br>
+    <b><%= 'plan'.humanize %>:</b>
+    <%= user.plan %>
+    <br>
+    <b><%= 'subscription_status'.humanize %>:</b>
+    <%= user.subscription_status %>
+    <br>
+    <b><%= 'current_period_end'.humanize %>:</b>
+    <%= user.current_period_end.strftime('%d %b %Y') if user.current_period_end %>
+    <br>
+    <b><%= 'posts_count'.humanize %>:</b>
+    <%= user.posts_count %>
+    <br>
+    <b><%= 'invitees'.humanize %>:</b>
+    <%= user.invitees.count %>
+    <% user.invitees.each do |invitee| %>
+      <%= invitee.email %>
+    <% end %>
+  </div>
+</div>
+
+
