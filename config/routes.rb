@@ -8,7 +8,12 @@ Rails.application.routes.draw do
   get 'terms', to: 'static_public#terms'
   get 'pricing', to: 'static_public#pricing'
 
-  resources :posts
+  resources :posts do
+    member do
+      patch "upvote", to: "posts#upvote"
+      patch "downvote", to: "posts#downvote"
+    end
+  end
 
   post "checkout/create", to: "checkout#create", as: "checkout_create"
   post "billing_portal/create", to: "billing_portal#create", as: "billing_portal_create"

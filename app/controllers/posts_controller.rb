@@ -1,14 +1,32 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_post, only: %i[ show edit update destroy ]
+  before_action :set_post, only: %i[ show edit update destroy upvote downvote ]
 
   def index
-    @posts = Post.all
+    @posts = Post.all.order(created_at: :desc)
     # if current_user&.active?
     #   @posts = Post.all
     # else
     #   @posts = Post.free
     # end
+  end
+
+  def upvote
+    if current_user.voted_up_on? @post
+      @post.unvote_by current_user
+    else
+      @post.upvote_by current_user
+    end
+    render "vote.js.erb"
+  end
+
+  def downvote
+    if current_user.voted_down_on? @post
+      @post.unvote_by current_user
+    else
+      @post.downvote_by current_user
+    end
+    render "vote.js.erb"
   end
 
   def show

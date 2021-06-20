@@ -3,6 +3,11 @@
     <h3>
       <%= link_to_unless_current post.title, post %>
     </h3>
+    <% if current_user %>
+      <%= render 'posts/upvote_link', post: post %>
+      <%= render 'posts/like_count', post: post %>
+      <%= render 'posts/downvote_link', post: post %>
+    <% end %>
     <%= markdown(post.body) %>
   </div>
   <div class='card-footer'>
