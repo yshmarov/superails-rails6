@@ -14,6 +14,7 @@
   rand(0..5).times do
     Post.create(
       title: Faker::Lorem.sentence(word_count: 3), 
+      description: Faker::Lorem.sentence(word_count: 5), 
       body: Faker::Markdown.random, 
       user: user, 
       premium: [true, false].sample)
