@@ -10,6 +10,9 @@ class User < ApplicationRecord
 
   acts_as_voter
 
+  extend FriendlyId
+  friendly_id :username, use: :slugged
+
   def self.from_omniauth(access_token)
     user = User.where(email: access_token.info.email).first
 

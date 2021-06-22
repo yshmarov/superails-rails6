@@ -2,6 +2,9 @@ class Post < ApplicationRecord
   belongs_to :user, counter_cache: true
 
   acts_as_votable
+
+  extend FriendlyId
+  friendly_id :title, use: :slugged
   
   validates :title, presence: true
   validates :description, presence: true
@@ -25,5 +28,4 @@ class Post < ApplicationRecord
   def downvote_percentage
     cached_votes_down.to_d/cached_votes_total.to_d*100
   end
-
 end

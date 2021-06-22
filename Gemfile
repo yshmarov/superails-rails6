@@ -67,3 +67,4 @@ gem 'devise_invitable', '~> 2.0.0'
 gem "redcarpet"
 gem 'stripe'
 gem 'acts_as_votable'
+gem 'friendly_id', '~> 5.4.0'
