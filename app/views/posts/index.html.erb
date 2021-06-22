@@ -17,8 +17,9 @@
   <%= f.label :title_cont %>
   <%= f.search_field :title_cont %>
 
-  <%= f.label :user_name_cont %>
-  <%= f.search_field :user_name_cont %>
+  <%= f.select :premium_eq, [['Premium', true], ['Free', false]], include_blank: 'Type' %>
+
+  <%= f.collection_select :user_name_cont, User.joins(:posts).distinct, :name, :name, include_blank: 'Author' %>
 
   <%= f.submit %>
 <% end %>
