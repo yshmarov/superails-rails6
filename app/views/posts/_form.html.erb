@@ -26,6 +26,7 @@
     <%= form.text_area :body, 
       style: "width: 100%", 
       rows: 8,
+      data: { controller: "textarea-autogrow" },
       maxlength: Post::MAX_BODY_LENGTH, 
       placeholder: 'User Markdown for formatting' 
     %>
