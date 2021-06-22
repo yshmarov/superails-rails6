@@ -68,3 +68,4 @@ gem "redcarpet"
 gem 'stripe'
 gem 'acts_as_votable'
 gem 'friendly_id', '~> 5.4.0'
+gem 'exception_notification'
