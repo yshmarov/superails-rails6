@@ -4,6 +4,7 @@ class Post < ApplicationRecord
   acts_as_votable
   
   validates :title, presence: true
+  validates :description, presence: true
   validates :body, presence: true
   
   scope :free, -> { where(premium: false) }

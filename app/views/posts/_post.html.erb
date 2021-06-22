@@ -8,7 +8,12 @@
       <%= render 'posts/like_count', post: post %>
       <%= render 'posts/downvote_link', post: post %>
     <% end %>
-    <%= markdown(post.body) %>
+    <p class="fst-italic">
+      <%= post.description %>
+    </p>
+    <% if controller_name == 'posts' && action_name == 'show' %>
+      <%= markdown(post.body) %>
+    <% end %>
   </div>
   <div class='card-footer'>
     On <%= post.created_at.strftime('%d %b %Y') %>
