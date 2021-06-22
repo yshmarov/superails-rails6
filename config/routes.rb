@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get 'privacy', to: 'static_public#privacy'
   get 'terms', to: 'static_public#terms'
   get 'pricing', to: 'static_public#pricing'
+  get 'about', to: 'static_public#about'
 
   resources :posts do
     member do

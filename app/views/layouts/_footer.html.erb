@@ -3,21 +3,26 @@
   <div class="container">
     <div class="row align-items-start">
       <div class="col-md-4">
-        <%= link_to root_path, class: "#{'active fw-bold' if current_page?(root_path)}" do %>
-          <div class="fa fa-home"></div>
+        <%= link_to root_path, class: "link-secondary #{'active fw-bold' if current_page?(root_path)}" do %>
           Superails.com
         <% end %>
       </div>
       <div class="col-md-4">
-        <%= link_to privacy_path, class: "#{'active fw-bold' if current_page?(privacy_path)}" do %>
-          <div class="fa fa-file-contract"></div>
-          Privacy
+        <%= link_to about_path, class: "link-secondary #{'active fw-bold' if current_page?(about_path)}" do %>
+          About
+        <% end %>
+        <br>
+        <%= link_to pricing_path, class: "link-secondary #{'active fw-bold' if current_page?(pricing_path)}" do %>
+          Pricing
         <% end %>
       </div>
       <div class="col-md-4">
-        <%= link_to terms_path, class: "#{'active fw-bold' if current_page?(terms_path)}" do %>
-          <div class="fa fa-file-contract"></div>
+        <%= link_to terms_path, class: "link-secondary #{'active fw-bold' if current_page?(terms_path)}" do %>
           Terms
+        <% end %>
+        <br>
+        <%= link_to privacy_path, class: "link-secondary #{'active fw-bold' if current_page?(privacy_path)}" do %>
+          Privacy
         <% end %>
       </div>
     </div>

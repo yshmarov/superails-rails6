@@ -1,6 +1,6 @@
 <%= content_tag "div", id: "upvote-#{post.id}" do %>
   <%= link_to upvote_post_path(post), method: :patch, remote: true, data: { disable_with: "voting..." } do %>
-    <% if current_user.voted_up_on? post %>
+    <% if current_user&.voted_up_on? post %>
       <i class="far fa-thumbs-up" style="color: green;"></i>
       unvote
     <% else %>

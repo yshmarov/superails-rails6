@@ -1,13 +1,14 @@
 <div class='card'>
   <div class='card-body'>
     <h3>
+      <%= premium_label(post.premium) %>
       <%= link_to_unless_current post.title, post %>
     </h3>
-    <% if current_user %>
+    <div class='d-flex'>
       <%= render 'posts/upvote_link', post: post %>
       <%= render 'posts/like_count', post: post %>
       <%= render 'posts/downvote_link', post: post %>
-    <% end %>
+    </div>
     <p class="fst-italic">
       <%= post.description %>
     </p>
@@ -20,7 +21,6 @@
     by 
     <%= image_tag post.user.image, size: "30x30", class: "rounded-circle d-inline-block align-top" if post.user.image %>
     <%= link_to post.user.username, post.user %>
-    <%= premium_label(post.premium) %>
   </div>
   <% if current_user == post.user %>
     <div class='card-footer'>
