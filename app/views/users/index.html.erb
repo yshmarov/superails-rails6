@@ -31,7 +31,4 @@
 
 <hr>
 
-<% @users.each do |user| %>
-  <%= render 'users/user', user: user %>
-  <br>
-<% end %>
+<%= render @users %>
