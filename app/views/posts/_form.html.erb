@@ -13,12 +13,12 @@
 
   <div class="field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, maxlength: Post::MAX_TITLE_LENGTH %>
   </div>
 
   <div class="field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, maxlength: Post::MAX_DESCRIPTION_LENGTH %>
   </div>
 
   <div class="field">
@@ -26,7 +26,7 @@
     <%= form.text_area :body, 
       style: "width: 100%", 
       rows: 8,
-      maxlength: 5000, 
+      maxlength: Post::MAX_BODY_LENGTH, 
       placeholder: 'User Markdown for formatting' 
     %>
   </div>
