@@ -1,3 +1,5 @@
-<%= content_tag "div", id: "like-count-#{post.id}" do %>
-  <%= post.cached_votes_score %>
+<%= content_tag :div, id: "like-count-#{post.id}" do %>
+  <div class='ms-2 me-2'>
+    <%= post.cached_votes_score %>
+  </div>
 <% end %>

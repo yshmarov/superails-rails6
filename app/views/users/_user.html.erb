@@ -54,7 +54,7 @@
     <%= user.subscription_status %>
     <br>
     <b><%= 'current_period_end'.humanize %>:</b>
-    <%= user.current_period_end.strftime('%d %b %Y') if user.current_period_end %>
+    <%= user.current_period_end&.strftime('%d %b %Y') %>
     <br>
     <b><%= 'posts_count'.humanize %>:</b>
     <%= user.posts_count %>

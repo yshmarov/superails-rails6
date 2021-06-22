@@ -4,17 +4,21 @@
       <%= premium_label(post.premium) %>
       <%= link_to_unless_current post.title, post %>
     </h3>
-    <div class='d-flex'>
-      <%= render 'posts/upvote_link', post: post %>
-      <%= render 'posts/like_count', post: post %>
-      <%= render 'posts/downvote_link', post: post %>
-    </div>
     <p class="fst-italic">
       <%= post.description %>
     </p>
     <% if controller_name == 'posts' && action_name == 'show' %>
       <%= markdown(post.body) %>
     <% end %>
+  </div>
+  <div class='card-footer'>
+    <h3>
+      <div class='d-flex justify-content-center'>
+        <%= render 'posts/upvote_link', post: post %>
+        <%= render 'posts/like_count', post: post %>
+        <%= render 'posts/downvote_link', post: post %>
+      </div>
+    </h3>
   </div>
   <div class='card-footer'>
     On <%= post.created_at.strftime('%d %b %Y') %>
@@ -24,8 +28,8 @@
   </div>
   <% if current_user == post.user %>
     <div class='card-footer'>
-      <%= link_to 'Edit', edit_post_path(post) %>
-      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+      <%= link_to 'Edit', edit_post_path(post), class: 'btn btn-sm btn-warning' %>
+      <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-sm btn-danger' %>
     </div>
   <% end %>
 </div>

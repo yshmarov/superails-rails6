@@ -1,17 +1,37 @@
-<h1>Pricing</h1>
+<div class='text-center'>
+  <h1>Pricing</h1>
+</div>
 
-<% @pricing.each do |price| %>
-  <br>
-  <b>
-    <%= price.product.name %>
-  </b>
-  <small><%= price.id %></small>
-  <b>
-    <%= price.unit_amount/100 %>
-    <%= price.currency %>
-    <%= price.recurring.interval %>
-  </b>
-  <% if user_signed_in? %>
-    <%= link_to "Pay #{price.unit_amount/100} per #{price.recurring.interval}", checkout_create_path(price: price.id), method: :post, remote: true, data: { disable_with: "validating..."} %>
+<div class="row row-cols-1 row-cols-md-2 g-4">
+  <% @pricing.each do |price| %>
+    <div class="col">
+      <div class="card shadow text-center">
+        <div class="card-header">
+          <h1>
+            <%= price.lookup_key.humanize %>
+          </h1>
+          <hr>
+          <h3>
+            <%= price.unit_amount/100 %>
+            <%= price.currency %>
+            <%= price.recurring.interval %>
+          </h3>
+          <b>
+            full access to all content
+          </b>
+          <hr>
+          <% if user_signed_in? %>
+            <%= link_to "Subscribe for #{price.unit_amount/100} #{price.currency} per #{price.recurring.interval}", 
+              checkout_create_path(price: price.id), 
+              method: :post, 
+              remote: true, 
+              data: { disable_with: "validating..."},
+              class: 'btn btn-lg btn-success' %>
+          <% else %>
+            <%= link_to "Create an account to subscribe", new_user_registration_path, class: 'btn btn-primary' %>  
+          <% end %>
+        </div>
+      </div>
+    </div>
   <% end %>
-<% end %>
+</div>

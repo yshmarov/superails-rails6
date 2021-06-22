@@ -7,14 +7,14 @@
 <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
 
 <%= sort_link(@q, :created_at, default_order: :desc) do %>
-  <strong>Created</strong>
+  <strong class='text-secondary'>Latest</strong>
 <% end %>
 <%= sort_link(@q, :cached_votes_score, default_order: :desc) do %>
-  <strong>Top</strong>
+  <strong class='text-secondary'>Top Rated</strong>
 <% end %>
 
 <%= search_form_for @q do |f| %>
-  <%= f.label :title_cont %>
+  <%= f.label :title %>
   <%= f.search_field :title_cont %>
 
   <%= f.select :premium_eq, [['Premium', true], ['Free', false]], include_blank: 'Type' %>
@@ -26,7 +26,8 @@
 
 <% if params[:q].present? %>
   <%= link_to posts_path do %>
-    <i class="fa fa-sync"></i>
+    <i class="fa fa-redo"></i>
+    Clear Search
   <% end %>
 <% end %>
 

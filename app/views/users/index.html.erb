@@ -6,18 +6,15 @@
 
 <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > 1 %>
 
-<%= sort_link(@q, :email) do %>
-  <strong>Email</strong>
-<% end %>
 <%= sort_link(@q, :created_at) do %>
-  <strong>Created</strong>
+  <strong class='text-secondary'>Latest</strong>
 <% end %>
 <%= sort_link(@q, :posts_count, default_order: :desc) do %>
-  <strong>Posts count</strong>
+  <strong class='text-secondary'>Posts count</strong>
 <% end %>
 
 <%= search_form_for @q do |f| %>
-  <%= f.label :email_cont %>
+  <%= f.label :email %>
   <%= f.search_field :email_cont %>
 
   <%= f.submit %>
