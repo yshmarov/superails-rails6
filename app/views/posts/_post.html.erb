@@ -18,6 +18,10 @@
         <%= render 'posts/like_count', post: post %>
         <%= render 'posts/downvote_link', post: post %>
       </div>
+      <div class="progress">
+        <div class="progress-bar bg-success" role="progressbar" style="width: <%= number_to_percentage(post.upvote_percentage, precision: 0) %>"></div>
+        <div class="progress-bar bg-danger" role="progressbar" style="width: <%= number_to_percentage(post.downvote_percentage, precision: 0) %>"></div>
+      </div>
     </h3>
   </div>
   <div class='card-footer'>
