@@ -12,6 +12,7 @@
   <div class="field" data-controller="character-counter">
     <%= form.label :title %>
     <%= form.text_field :title,
+      autocomplete: 'off',
       style: "width: 100%",
       data: { character_counter_target: 'input' },
       maxlength: Post::MAX_TITLE_LENGTH %>
@@ -21,6 +22,7 @@
   <div class="field" data-controller="character-counter">
     <%= form.label :description %>
     <%= form.text_field :description,
+      autocomplete: 'off',
       style: "width: 100%",
       data: { character_counter_target: 'input' },
       maxlength: Post::MAX_DESCRIPTION_LENGTH %>
