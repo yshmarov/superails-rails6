@@ -40,15 +40,19 @@ class User < ApplicationRecord
     # update(stripe_customer_id: customer.id)
   end
 
-  def active?
-    subscription_status == "active"
-  end
-
   def username
     if name?
       name
     else
       email.split(/@/).first
     end
+  end
+
+  after_create do
+    update(name: username)
+  end
+
+  def active?
+    subscription_status == "active"
   end
 end
