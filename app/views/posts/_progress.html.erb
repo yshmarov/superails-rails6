@@ -1,0 +1,6 @@
+<%= content_tag :div, id: "progress-#{post.id}" do %>
+  <div class="progress">
+    <div class="progress-bar bg-success" role="progressbar" style="width: <%= number_to_percentage(post.upvote_percentage, precision: 0) %>"></div>
+    <div class="progress-bar bg-danger" role="progressbar" style="width: <%= number_to_percentage(post.downvote_percentage, precision: 0) %>"></div>
+  </div>
+<% end %>
