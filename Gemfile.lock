@@ -131,6 +131,8 @@ GEM
     hashie (4.1.0)
     i18n (1.8.10)
       concurrent-ruby (~> 1.0)
+    invisible_captcha (2.0.0)
+      rails (>= 5.0)
     jbuilder (2.11.2)
       activesupport (>= 5.0.0)
     jwt (2.2.3)
@@ -302,6 +304,7 @@ DEPENDENCIES
   exception_notification
   faker!
   friendly_id (~> 5.4.0)
+  invisible_captcha
   jbuilder (~> 2.7)
   letter_opener
   listen (~> 3.3)
