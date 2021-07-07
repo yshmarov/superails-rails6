@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   devise_for :users, 
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
-                   confirmations: 'users/confirmations'
+                   confirmations: 'users/confirmations',
+                   registrations: 'users/registrations'
                  }
   root 'static_public#landing_page'
   get 'privacy', to: 'static_public#privacy'
