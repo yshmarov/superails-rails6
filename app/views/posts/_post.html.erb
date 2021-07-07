@@ -2,10 +2,10 @@
   <div class='card-body'>
     <h3>
       <%= premium_label(post.premium) %>
-      <%= link_to_unless_current post.title, post %>
+      <%= link_to_unless_current highlight(post.title, params.dig(:q, :title_or_description_cont)), post %>
     </h3>
     <p class="fst-italic">
-      <%= post.description %>
+      <%= highlight(post.description, params.dig(:q, :title_or_description_cont)) %>
     </p>
     <% if controller_name == 'posts' && action_name == 'show' %>
       <%= markdown(post.body) %>

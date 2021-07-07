@@ -14,8 +14,8 @@
 <% end %>
 
 <%= search_form_for @q do |f| %>
-  <%= f.label :title %>
-  <%= f.search_field :title_cont %>
+  <%= f.label :title_or_description %>
+  <%= f.search_field :title_or_description_cont %>
 
   <%= f.select :premium_eq, [['Premium', true], ['Free', false]], include_blank: 'Type' %>
 
