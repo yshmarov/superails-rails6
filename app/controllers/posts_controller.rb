@@ -7,6 +7,10 @@ class PostsController < ApplicationController
     @q = Post.order(created_at: :desc).ransack(params[:q])
     @pagy, @posts = pagy(@q.result.includes(:user))
 
+    # @posts = current_user.get_voted Post
+    # @posts = current_user.get_up_voted Post
+    # @posts = current_user.get_down_voted Post
+
     # if current_user&.active?
     #   @posts = Post.all
     # else
@@ -36,10 +40,11 @@ class PostsController < ApplicationController
     if @post.premium? && current_user&.subscription_status != 'active'
       redirect_to posts_path, alert: 'You are not a premium subscriber'
     end
+    @post = Post.includes(:comments).friendly.find(params[:id])
   end
 
   def new
-    @post = Post.new
+    @post = current_user.posts.new
   end
 
   def edit
@@ -49,8 +54,7 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    @post.user = current_user
+    @post = current_user.posts.new(post_params)
     if @post.save
       redirect_to @post, notice: "Post was successfully created."
     else

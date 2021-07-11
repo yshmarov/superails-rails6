@@ -1,0 +1,10 @@
+var form = document.querySelector("#<%= dom_id(@commentable, 'form') %>")
+if (form != null) {
+  form.classList.toggle("display-none")
+}
+
+var comments = document.querySelector("#<%= dom_id(@commentable) %>")
+if (comments == null) {
+  comments = document.querySelector("#comments")
+}
+comments.insertAdjacentHTML('beforeend', '<%= j render 'comments/comment', commentable: @commentable, comment: @comment %>')

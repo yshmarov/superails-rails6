@@ -1,0 +1,18 @@
+<%= content_tag :div, id: dom_id(comment), class: 'comment' do %>
+  <% if comment.deleted? %>
+    <strong>[deleted]</strong>
+  <% else %>
+    <strong><%= comment.user.email %></strong>
+    <p><%= comment.content %></p>
+  <% end %>
+
+  <div class='links'><small>
+    <%= link_to 'Reply', [:new, comment, :comment], remote: true %>
+    <% if current_user == comment.user %>
+      <%= link_to 'Delete', [comment.commentable, comment], method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  </small></div>
+
+  <%= render 'comments/form', commentable: comment, comment: Comment.new %>
+  <%= render comment.comments %>
+<% end %>

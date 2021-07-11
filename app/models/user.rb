@@ -7,6 +7,7 @@ class User < ApplicationRecord
 
   has_many :invitees, class_name: 'User', foreign_key: :invited_by_id
   has_many :posts, dependent: :restrict_with_error
+  has_many :comments
 
   acts_as_voter
 

@@ -1,1 +1,9 @@
 <%= render 'posts/post', post: @post %>
+
+<p><%= render 'comments/form', commentable: @post, comment: Comment.new %></p>
+<%= link_to "Add Comment", [:new, @post, :comment], remote: true %> 
+
+<h2>Comment</h2>
+<div id='comments'>
+  <%= render @post.comments %>
+</div>

@@ -23,4 +23,11 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[index show]
 
+  resources :posts, except: :index do
+    resources :comments,  only: %i[new create destroy], module: :posts
+  end
+
+  resources :comments, only: [] do
+    resources :comments,  only:   %i[new create destroy], module: :comments
+  end
 end
