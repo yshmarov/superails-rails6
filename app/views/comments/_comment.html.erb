@@ -1,5 +1,5 @@
 <%= content_tag :div, id: dom_id(comment), class: 'comment' do %>
-  <% if comment.deleted? %>
+  <% if comment.deleted_at? %>
     <strong>[deleted]</strong>
   <% else %>
     <strong><%= comment.user.email %></strong>

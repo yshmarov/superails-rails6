@@ -1,14 +1,10 @@
 class Comment < ApplicationRecord
-  # belongs_to :user
-  belongs_to :user, optional: true
+  belongs_to :user
   belongs_to :commentable, polymorphic: true
   has_many :comments, as: :commentable
-
-  def deleted?
-    user.nil?
-  end
+  validates :content, presence: true
 
   def destroy
-    update(user: nil, content: nil)
+    update(deleted_at: Time.zone.now)
   end
 end
