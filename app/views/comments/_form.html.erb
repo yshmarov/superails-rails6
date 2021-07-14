@@ -1,6 +1,6 @@
 <%= form_with model: [commentable, comment], id: dom_id(commentable, 'form'), class: 'display-none' do |form| %>
   <div class='field'>
-    <%= form.text_area :content, placeholder: 'Add a comment', class: 'form-control', row: 4, required: true %>
+    <%= form.text_area :content, placeholder: 'Add a comment', class: 'form-control', rows: 10, required: true %>
   </div>
 
   <div class='field'>
