@@ -8,6 +8,6 @@ module PostsHelper
       text = 'Free'
       badge_color = 'badge bg-success'
     end
-    content_tag(:span, text, class: badge_color)
+    tag.span(text, class: badge_color)
   end
 end

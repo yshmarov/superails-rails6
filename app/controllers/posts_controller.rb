@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_post, only: %i[ show edit update destroy upvote downvote ]
+  before_action :set_post, only: %i[show edit update destroy upvote downvote]
 
   def index
     # @posts = Post.all.order(created_at: :desc)
@@ -20,7 +20,7 @@ class PostsController < ApplicationController
     else
       @post.upvote_by current_user
     end
-    render "vote.js.erb"
+    render 'vote.js.erb'
   end
 
   def downvote
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     else
       @post.downvote_by current_user
     end
-    render "vote.js.erb"
+    render 'vote.js.erb'
   end
 
   def show
@@ -43,48 +43,47 @@ class PostsController < ApplicationController
   end
 
   def edit
-    unless @post.user == current_user
-      redirect_to posts_path, alert: 'You are not authorized'
-    end
+    redirect_to posts_path, alert: 'You are not authorized' unless @post.user == current_user
   end
 
   def create
     @post = Post.new(post_params)
     @post.user = current_user
     if @post.save
-      redirect_to @post, notice: "Post was successfully created."
+      redirect_to @post, notice: 'Post was successfully created.'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
   def update
-    unless @post.user == current_user
-      redirect_to posts_path, alert: 'You are not authorized'
-    else
+    if @post.user == current_user
       if @post.update(post_params)
-        redirect_to @post, notice: "Post was successfully updated."
+        redirect_to @post, notice: 'Post was successfully updated.'
       else
         render :edit, status: :unprocessable_entity
       end
+    else
+      redirect_to posts_path, alert: 'You are not authorized'
     end
   end
 
   def destroy
-    unless @post.user == current_user
-      redirect_to posts_path, alert: 'You are not authorized'
-    else
+    if @post.user == current_user
       @post.destroy
-      redirect_to posts_url, notice: "Post was successfully destroyed."
+      redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    else
+      redirect_to posts_path, alert: 'You are not authorized'
     end
   end
 
   private
-    def set_post
-      @post = Post.friendly.find(params[:id])
-    end
 
-    def post_params
-      params.require(:post).permit(:title, :body, :premium, :description)
-    end
+  def set_post
+    @post = Post.friendly.find(params[:id])
+  end
+
+  def post_params
+    params.require(:post).permit(:title, :body, :premium, :description)
+  end
 end

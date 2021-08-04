@@ -1,4 +1,3 @@
-
 Pagy::VARS[:items] = 10
 Pagy::VARS[:cycle] = true
 

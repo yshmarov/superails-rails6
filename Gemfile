@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
 end
 
 group :development do
@@ -38,8 +38,8 @@ group :development do
   gem 'web-console', '>= 4.1.0'
   # Display performance information such as SQL time and flame graphs for each request in your browser.
   # Can be configured to work on production as well see: https://github.com/MiniProfiler/rack-mini-profiler/blob/master/README.md
-  gem 'rack-mini-profiler', '~> 2.0'
   gem 'listen', '~> 3.3'
+  gem 'rack-mini-profiler', '~> 2.0'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
 end
@@ -53,22 +53,22 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
-gem "devise", github: "heartcombo/devise", branch: "master" # https://stackoverflow.com/a/66155946/5695646
-gem 'omniauth-google-oauth2'
-gem "omniauth-rails_csrf_protection"
+gem 'acts_as_votable'
+gem 'devise', github: 'heartcombo/devise', branch: 'master' # https://stackoverflow.com/a/66155946/5695646
+gem 'devise_invitable', '~> 2.0.0'
+gem 'exception_notification'
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master', group: :development
+gem 'friendly_id', '~> 5.4.0'
+gem 'invisible_captcha'
+gem 'letter_opener', group: :development
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
-gem "letter_opener", group: :development
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master', group: :development
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
 gem 'pagy', '~> 3.5'
 gem 'ransack'
-gem 'devise_invitable', '~> 2.0.0'
-gem "redcarpet"
+gem 'redcarpet'
 gem 'rouge'
-gem 'stripe'
-gem 'acts_as_votable'
-gem 'friendly_id', '~> 5.4.0'
-gem 'exception_notification'
-gem 'invisible_captcha'
 gem 'rubocop-rails', require: false
+gem 'stripe'
