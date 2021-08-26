@@ -1,0 +1,14 @@
+require: 
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0.1
+  Exclude:
+    - 'vendor/**/*'
+    - '**/db/schema.rb'
+    - '**/node_modules/**/*'
+    - '**/db/**/*'
+    - 'bin/*'
+
+Style/Documentation:
+  Enabled: false
