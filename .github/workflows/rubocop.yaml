@@ -1,4 +1,2 @@
-- name: Github Rubocop Action
-  # You may pin to the exact commit or the version.
-  # uses: luizfonseca/github-actions-rubocop@fe9662d3f5c954bf6ee3ab2b7f69715d48ba46c4
-  uses: luizfonseca/github-actions-rubocop@1.5.6
+name: Github Rubocop Action
+uses: luizfonseca/github-actions-rubocop@1.5.6
