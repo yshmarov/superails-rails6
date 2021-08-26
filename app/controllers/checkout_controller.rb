@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CheckoutController < ApplicationController
-  
+
   def create
     @session = Stripe::Checkout::Session.create({
       customer: current_user.stripe_customer_id,
@@ -17,5 +17,5 @@ class CheckoutController < ApplicationController
       format.js
     end
   end
-  
+
 end
