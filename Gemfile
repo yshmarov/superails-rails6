@@ -71,3 +71,8 @@ gem 'acts_as_votable'
 gem 'friendly_id', '~> 5.4.0'
 gem 'exception_notification'
 gem 'invisible_captcha'
+
+group :development, :test do
+  gem 'rubocop-rails', require: false
+end
+
