@@ -55,6 +55,6 @@ class User < ApplicationRecord
   end
 
   def active?
-    subscription_status == "active"
+    subscription_status == 'active'
   end
 end

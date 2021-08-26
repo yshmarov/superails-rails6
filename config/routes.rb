@@ -14,13 +14,13 @@ Rails.application.routes.draw do
 
   resources :posts do
     member do
-      patch "upvote", to: "posts#upvote"
-      patch "downvote", to: "posts#downvote"
+      patch 'upvote', to: 'posts#upvote'
+      patch 'downvote', to: 'posts#downvote'
     end
   end
 
-  post "checkout/create", to: "checkout#create", as: "checkout_create"
-  post "billing_portal/create", to: "billing_portal#create", as: "billing_portal_create"
+  post 'checkout/create', to: 'checkout#create', as: 'checkout_create'
+  post 'billing_portal/create', to: 'billing_portal#create', as: 'billing_portal_create'
   resources :webhooks, only: [:create]
 
   resources :users, only: %i[index show]

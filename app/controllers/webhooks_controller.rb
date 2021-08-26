@@ -18,7 +18,7 @@ class WebhooksController < ApplicationController
       return
     rescue Stripe::SignatureVerificationError => e
       # Invalid signature
-      puts "Signature error"
+      puts 'Signature error'
       p e
       return
     end

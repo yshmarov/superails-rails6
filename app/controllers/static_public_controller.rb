@@ -8,7 +8,7 @@ class StaticPublicController < ApplicationController
   end
 
   def pricing
-    @pricing = Stripe::Price.list(lookup_keys: ["pro_monthly", "pro_yearly"], expand: ["data.product"]).data.sort_by {|p| p.unit_amount}
+    @pricing = Stripe::Price.list(lookup_keys: ['pro_monthly', 'pro_yearly'], expand: ['data.product']).data.sort_by {|p| p.unit_amount}
   end
 
   def privacy
