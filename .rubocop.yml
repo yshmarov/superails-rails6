@@ -2,6 +2,7 @@ require:
   - rubocop-rails
 
 AllCops:
+  TargetRubyVersion: 3.0.1
   Exclude:
     - '**/db/**/*'
     - 'bin/*'
