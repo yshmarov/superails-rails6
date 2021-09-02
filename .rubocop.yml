@@ -1,5 +1,10 @@
 require: 
   - rubocop-rails
 
+AllCops:
+  Exclude:
+    - '**/db/**/*'
+    - 'bin/*'
+
 Style/Documentation:
   Enabled: false
