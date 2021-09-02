@@ -11,7 +11,7 @@ class CheckoutController < ApplicationController
       line_items: [
         {price: params[:price], quantity: 1},
       ],
-      mode: 'subscription',
+      mode: 'subscription'
     })
     respond_to do |format|
       format.js
