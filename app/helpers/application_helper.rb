@@ -18,7 +18,7 @@ module ApplicationHelper
   end
 
   def deep_active_link_to_dropdown_item(path)
-    tag.li() do
+    tag.li do
       link_to path, class: "#{'active fw-bold' if current_page?(path)} dropdown-item" do
         yield
       end
