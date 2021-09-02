@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 module PostsHelper
   def premium_label(value)
     case value

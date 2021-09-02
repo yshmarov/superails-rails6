@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class User < ApplicationRecord
   # :lockable, :timeoutable 
   devise :invitable, :database_authenticatable, :registerable,

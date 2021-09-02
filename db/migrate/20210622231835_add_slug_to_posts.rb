@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class AddSlugToPosts < ActiveRecord::Migration[6.1]
   def change
     add_column :posts, :slug, :string
