@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
 class User < ApplicationRecord
-  # :lockable, :timeoutable 
+  # :lockable, :timeoutable
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :trackable, :confirmable,
-         :omniauthable, omniauth_providers: %i[google_oauth2 github] 
+         :omniauthable, omniauth_providers: %i[google_oauth2 github]
 
   has_many :invitees, class_name: 'User', foreign_key: :invited_by_id
   has_many :posts, dependent: :restrict_with_error
