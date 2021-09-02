@@ -14,7 +14,7 @@ class Post < ApplicationRecord
 
   MAX_TITLE_LENGTH = 140
   MAX_DESCRIPTION_LENGTH = 200
-  MAX_BODY_LENGTH = 50000
+  MAX_BODY_LENGTH = 50_000
 
   validates :title, length: { maximum: MAX_TITLE_LENGTH }
   validates :description, length: { maximum: MAX_DESCRIPTION_LENGTH }
