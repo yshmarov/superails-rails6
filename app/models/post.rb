@@ -24,10 +24,10 @@ class Post < ApplicationRecord
   scope :premium, -> { where(premium: true) }
 
   def upvote_percentage
-    cached_votes_up.to_d/cached_votes_total.to_d*100
+    cached_votes_up.to_d / cached_votes_total.to_d * 100
   end
 
   def downvote_percentage
-    cached_votes_down.to_d/cached_votes_total.to_d*100
+    cached_votes_down.to_d / cached_votes_total.to_d * 100
   end
 end
