@@ -24,5 +24,4 @@ Rails.application.routes.draw do
   resources :webhooks, only: [:create]
 
   resources :users, only: %i[index show]
-
 end
