@@ -6,6 +6,7 @@ AllCops:
   Exclude:
     - '**/db/**/*'
     - 'bin/*'
+    - 'config/**/*'
 
 Style/Documentation:
   Enabled: false
