@@ -7,7 +7,7 @@ class User < ApplicationRecord
          :trackable, :confirmable,
          :omniauthable, omniauth_providers: %i[google_oauth2 github]
 
-  has_many :invitees, class_name: 'User', foreign_key: :invited_by_id
+  has_many :invitees, class_name: 'User', foreign_key: :invited_by_id, dependent: :nullify
   has_many :posts, dependent: :restrict_with_error
 
   acts_as_voter
@@ -21,7 +21,7 @@ class User < ApplicationRecord
     unless user
       user = User.create(
         email: access_token.info.email,
-        password: Devise.friendly_token[0,20]
+        password: Devise.friendly_token[0, 20]
       )
     end
 
