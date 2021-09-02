@@ -3,11 +3,11 @@
 class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
 
   def google_oauth2
-    handle_auth "Google"
+    handle_auth 'Google'
   end
 
   def github
-    handle_auth "Github"
+    handle_auth 'Github'
   end
 
   def handle_auth(kind)
@@ -24,6 +24,6 @@ class Users::OmniauthCallbacksController < Devise::OmniauthCallbacksController
   end
 
   def failure
-    redirect_to root_path, alert: "Something went wrong. Please try again."
+    redirect_to root_path, alert: 'Something went wrong. Please try again.'
   end
 end
