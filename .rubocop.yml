@@ -20,3 +20,5 @@ Rails/OutputSafety:
 Style/EmptyMethod:
   Enabled: false
 
+Metrics/AbcSize:
+  Enabled: false
