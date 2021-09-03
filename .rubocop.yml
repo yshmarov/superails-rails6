@@ -22,3 +22,6 @@ Style/EmptyMethod:
 
 Metrics/AbcSize:
   Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
