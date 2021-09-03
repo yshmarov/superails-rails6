@@ -16,9 +16,11 @@ Metrics/MethodLength:
 
 Rails/OutputSafety:
   Enabled: false
+  # .html_safe
 
 Style/EmptyMethod:
   Enabled: false
+  # def index; end
 
 Metrics/AbcSize:
   Enabled: false
