@@ -13,3 +13,10 @@ Style/Documentation:
 
 Metrics/MethodLength:
   Enabled: false
+
+Rails/OutputSafety:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
