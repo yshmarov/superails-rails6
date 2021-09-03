@@ -2,7 +2,7 @@
 
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_post, only: %i[ show edit update destroy upvote downvote ]
+  before_action :set_post, only: %i[show edit update destroy upvote downvote]
 
   def index
     # @posts = Post.all.order(created_at: :desc)
