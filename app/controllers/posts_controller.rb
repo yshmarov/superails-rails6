@@ -82,11 +82,11 @@ class PostsController < ApplicationController
 
   private
 
-    def set_post
-      @post = Post.friendly.find(params[:id])
-    end
+  def set_post
+    @post = Post.friendly.find(params[:id])
+  end
 
-    def post_params
-      params.require(:post).permit(:title, :body, :premium, :description)
-    end
+  def post_params
+    params.require(:post).permit(:title, :body, :premium, :description)
+  end
 end
