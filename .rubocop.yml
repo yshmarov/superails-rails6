@@ -31,3 +31,6 @@ Bundler/OrderedGems:
 
 Layout/LineLength:
   Enabled: false
+
+Rails/Output:
+  Enabled: false
