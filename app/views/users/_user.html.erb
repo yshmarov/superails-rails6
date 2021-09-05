@@ -64,6 +64,18 @@
     <% user.invitees.each do |invitee| %>
       <%= invitee.email %>
     <% end %>
+    <hr>
+    Post voted:
+    <%= Post.my_voted(user).count %>
+    <br>
+    Post not voted:
+    <%= Post.my_unvoted(user).count %>
+    <br>
+    Posts upvoted:
+    <%= Post.my_upvoted(user).count %>
+    <br>
+    Posts downvoted:
+    <%= Post.my_downvoted(user).count %>
   </div>
 </div>
 <br>

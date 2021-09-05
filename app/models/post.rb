@@ -21,6 +21,11 @@ class Post < ApplicationRecord
   scope :free, -> { where(premium: false) }
   scope :premium, -> { where(premium: true) }
 
+  scope :my_voted, -> (user) { where(id: user.find_voted_items.map(&:id)) }
+  scope :my_upvoted, -> (user) { where(id: user.find_up_voted_items.map(&:id)) }
+  scope :my_downvoted, -> (user) { where(id: user.find_down_voted_items.map(&:id)) }
+  scope :my_unvoted, -> (user) { where.not(id: user.find_voted_items.map(&:id)) }
+
   def upvote_percentage
     cached_votes_up.to_d/cached_votes_total.to_d*100
   end

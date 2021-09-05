@@ -1,1 +1,8 @@
 <%= render 'posts/post', post: @post %>
+
+<hr>
+Upvoters:
+<%= @post.votes_for.up.by_type(User).voters.pluck(:email) %>
+<hr>
+Downvoters:
+<%= @post.votes_for.down.by_type(User).voters.pluck(:email) %>
