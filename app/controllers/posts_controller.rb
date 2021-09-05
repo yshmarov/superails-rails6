@@ -33,16 +33,22 @@ class PostsController < ApplicationController
   end
 
   def show
+    set_meta_tags title: @post.title,
+                  description: @post.description,
+                  keywords: 'Site, Login, Members'
+
     if @post.premium? && current_user&.subscription_status != 'active'
       redirect_to posts_path, alert: 'You are not a premium subscriber'
     end
   end
 
   def new
+    set_meta_tags title: "#{action_name.capitalize} #{controller_name.singularize.capitalize}"
     @post = Post.new
   end
 
   def edit
+    set_meta_tags title: "#{action_name.capitalize} #{controller_name.singularize.capitalize}"
     unless @post.user == current_user
       redirect_to posts_path, alert: 'You are not authorized'
     end

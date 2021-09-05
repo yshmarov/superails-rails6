@@ -149,6 +149,8 @@ GEM
     mail (2.7.1)
       mini_mime (>= 0.1.1)
     marcel (1.0.1)
+    meta-tags (2.15.0)
+      actionpack (>= 3.2.0, < 6.2)
     method_source (1.0.0)
     mini_mime (1.0.3)
     minitest (5.14.4)
@@ -308,6 +310,7 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   letter_opener
   listen (~> 3.3)
+  meta-tags
   omniauth-github!
   omniauth-google-oauth2
   omniauth-rails_csrf_protection

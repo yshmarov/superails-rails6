@@ -1,8 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Superails</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
+
+    <%= display_meta_tags site: Rails.application.class.module_parent.name,
+                          description: 'Moder Ruby on Rails screencasts',
+                          keywords: 'ruby, rails, ruby-on-rails' %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag "thumbnail.png" %>
