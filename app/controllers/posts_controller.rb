@@ -80,7 +80,12 @@ class PostsController < ApplicationController
 
   private
     def set_post
-      @post = Post.friendly.find(params[:id])
+      @post = Post.find(params[:id])
+
+      # post_path is only for SHOW action
+      # if request.path != post_path(@post)
+      #   return redirect_to @post, :status => :moved_permanently
+      # end
     end
 
     def post_params

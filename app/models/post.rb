@@ -4,7 +4,11 @@ class Post < ApplicationRecord
   acts_as_votable
 
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: [:slugged, :finders, :history]
+  
+  def should_generate_new_friendly_id?
+    title_changed?
+  end
   
   validates :title, presence: true
   validates :description, presence: true
