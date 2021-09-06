@@ -11,5 +11,6 @@ Comments:
 <%= @comments.count %>
 <br>
 <%= link_to 'Add Comment', new_post_comment_path(@commentable) %>
+<%= render template: 'comments/new' %>
 <br>
 <%= render @comments %>

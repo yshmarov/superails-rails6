@@ -11,11 +11,11 @@ Rails.application.routes.draw do
   get 'about', to: 'static_public#about'
 
   resources :comments, only: [] do
-    resources :comments, only: %i[new create destroy]
+    resources :comments, only: %i[new create destroy], module: :comments
   end
 
   resources :posts do
-    resources :comments, only: %i[new create destroy]
+    resources :comments, only: %i[new create destroy], module: :posts
     member do
       patch "upvote", to: "posts#upvote"
       patch "downvote", to: "posts#downvote"

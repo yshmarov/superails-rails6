@@ -1,7 +1,5 @@
 New comment for
-<% if @commentable.model_name == 'Comment' %>
-  <%= link_to @commentable.commentable.title, @commentable.commentable %>
-<% else %>
-  <%= link_to @commentable.title, @commentable %>
-<% end %>
-<%= render 'form', comment: @comment %>
+
+<%= link_to @commentable.title, @commentable unless @commentable.is_a?(Comment) %>
+<%= link_to @commentable.find_parent.title, @commentable.find_parent if @commentable.is_a?(Comment) %>
+<%= render 'comments/form', comment: @comment %>

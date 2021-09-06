@@ -12,4 +12,10 @@ class Comment < ApplicationRecord
   def destroy
     update(deleted_at: Time.zone.now)
   end
+
+  def find_parent
+    return self.commentable unless self.commentable.is_a?(Comment)
+    self.commentable.find_parent
+  end
+
 end

@@ -10,13 +10,12 @@
   <% end %>
 
   <div class="field" data-controller="character-counter">
-    <%= form.label :body %>
     <%= form.text_area :body,
       style: "width: 100%",
       rows: 8,
       data: { controller: "textarea-autogrow", character_counter_target: 'input' },
       maxlength: Post::MAX_BODY_LENGTH, 
-      placeholder: 'User Markdown for formatting' 
+      placeholder: 'Add a comment here. User Markdown for formatting' 
     %>
     <strong data-character-counter-target="counter"></strong>/<%= Post::MAX_BODY_LENGTH%> characters
   </div>

@@ -9,11 +9,9 @@ class CommentsController < ApplicationController
     @comment = @commentable.comments.build(comment_params)
     @comment.user = current_user
     if @comment.save
-      if @commentable.model_name == 'Comment'
-        redirect_to @commentable.commentable, notice: 'Comment created'
-      else
-        redirect_to @commentable, notice: 'Comment created'
-      end
+      redirect_to @commentable unless @commentable.is_a?(Comment)
+      redirect_to @commentable.find_parent if @commentable.is_a?(Comment)
+      flash[:notice] = 'Comment created'
     else
       render :new
     end
@@ -22,11 +20,9 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     if @comment.destroy
-      if @commentable.model_name == 'Comment'
-        redirect_to @commentable.commentable, notice: 'Comment deleted'
-      else
-        redirect_to @commentable, alert: 'Something went wrong'
-      end
+      redirect_to @commentable unless @commentable.is_a?(Comment)
+      redirect_to @commentable.find_parent if @commentable.is_a?(Comment)
+      flash[:alert] = 'Comment deleted'
     else
       redirect_to @commentable, alert: 'Something went wrong'
     end
@@ -36,13 +32,5 @@ class CommentsController < ApplicationController
 
   def comment_params
     params.require(:comment).permit(:body)
-  end
-
-  def set_commentable
-    if params[:post_id].present?
-      @commentable = Post.find(params[:post_id])
-    elsif params[:comment_id].present?
-      @commentable = Comment.find(params[:comment_id])
-    end
   end
 end

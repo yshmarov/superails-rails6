@@ -42,6 +42,7 @@ class PostsController < ApplicationController
     end
 
     @commentable = @post
+    @comment = Comment.new
     @comments = @post.comments
   end
 
