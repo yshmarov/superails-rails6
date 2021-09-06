@@ -3,10 +3,11 @@
     Comment has been deleted
   <% else %>
     <%= comment.created_at %>
-    <%= comment.body %>
+    <%= markdown(comment.body) %>
     <%= link_to comment.user.name, comment.user %>
     <%= link_to 'Delete comment', [@commentable, comment], method: :delete %>
   <% end %>
+  <%= link_to 'Reply', new_comment_comment_path(comment) %>
   <br>
   <%= render comment.comments %>
 </div>

@@ -10,6 +10,10 @@ Rails.application.routes.draw do
   get 'pricing', to: 'static_public#pricing'
   get 'about', to: 'static_public#about'
 
+  resources :comments, only: [] do
+    resources :comments, only: %i[new create destroy]
+  end
+
   resources :posts do
     resources :comments, only: %i[new create destroy]
     member do
