@@ -40,6 +40,9 @@ class PostsController < ApplicationController
     if @post.premium? && current_user&.subscription_status != 'active'
       redirect_to posts_path, alert: 'You are not a premium subscriber'
     end
+
+    @commentable = @post
+    @comments = @post.comments
   end
 
   def new

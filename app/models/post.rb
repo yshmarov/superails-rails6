@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user, counter_cache: true
+  has_many :comments, as: :commentable
 
   acts_as_votable
 
