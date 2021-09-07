@@ -4,7 +4,8 @@
     <div class="row align-items-start">
       <div class="col-md-4">
         <%= link_to root_path, class: "link-secondary #{'active fw-bold' if current_page?(root_path)}" do %>
-          Superails.com
+          <%= image_tag "favicon.ico", height: "30", alt: "logo", class: "d-inline-block align-top" %>
+          superails.com
         <% end %>
       </div>
       <div class="col-md-4">
