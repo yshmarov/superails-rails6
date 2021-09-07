@@ -1,9 +1,11 @@
 <%= content_tag :div, id: "complete-#{post.id}" do %>
-  <%= link_to complete_post_path(post), method: :patch, remote: true do %>
-    <% if current_user&.voted_up_on? post, vote_scope: 'watchlist' %>
-      <i class="far fa-check-square text-success"></i>
-    <% else %>
-      <i class="far fa-check-square text-secondary"></i>
+  <div class='ms-4 me-2'>
+    <%= link_to complete_post_path(post), method: :patch, remote: true do %>
+      <% if current_user&.voted_up_on? post, vote_scope: 'watchlist' %>
+        <i class="fa fa-check-square text-success"></i>
+      <% else %>
+        <i class="fa fa-check-square text-secondary"></i>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 <% end %>
