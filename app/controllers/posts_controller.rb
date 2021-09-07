@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_post, only: %i[ show edit update destroy upvote downvote ]
+  before_action :set_post, only: %i[ show edit update destroy upvote downvote bookmark ]
 
   def index
     # @posts = Post.all.order(created_at: :desc)
@@ -28,6 +28,15 @@ class PostsController < ApplicationController
       @post.unvote_by current_user, vote_scope: 'like'
     else
       @post.downvote_by current_user, vote_scope: 'like'
+    end
+    render "vote.js.erb"
+  end
+
+  def bookmark
+    if current_user.voted_up_on? @post, vote_scope: 'bookmark'
+      @post.unvote_by current_user, vote_scope: 'bookmark'
+    else
+      @post.upvote_by current_user, vote_scope: 'bookmark'
     end
     render "vote.js.erb"
   end
