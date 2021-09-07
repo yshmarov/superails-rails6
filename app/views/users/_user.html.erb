@@ -65,17 +65,24 @@
       <%= invitee.email %>
     <% end %>
     <hr>
-    Post voted:
-    <%= Post.my_voted(user).count %>
+    <h3>Post stats:</h3>
+    Voted:
+    <%= user.find_voted_items(vote_scope: 'like').count %>
     <br>
-    Post not voted:
-    <%= Post.my_unvoted(user).count %>
+    Upvoted:
+    <%= user.find_up_voted_items(vote_scope: 'like').count %>
     <br>
-    Posts upvoted:
-    <%= Post.my_upvoted(user).count %>
+    Downvoted:
+    <%= user.find_down_voted_items(vote_scope: 'like').count %>
     <br>
-    Posts downvoted:
-    <%= Post.my_downvoted(user).count %>
+    Bookmarked:
+    <%= user.find_voted_items(vote_scope: 'bookmark').count %>
+    <br>
+    Completed:
+    <%= user.find_up_voted_items(vote_scope: 'watchlist').count %>
+    <br>
+    Watchlisted:
+    <%= user.find_down_voted_items(vote_scope: 'watchlist').count %>
   </div>
 </div>
 <br>
