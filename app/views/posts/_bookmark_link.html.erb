@@ -1,4 +1,5 @@
 <%= content_tag :div, id: "bookmark-#{post.id}" do %>
+  <div class='me-4'>
   <%= link_to bookmark_post_path(post), method: :patch, remote: true do %>
     <% if current_user&.voted_up_on? post, vote_scope: 'bookmark' %>
       <i class="fa fa-star text-warning"></i>
@@ -6,4 +7,5 @@
       <i class="fa fa-star text-secondary"></i>
     <% end %>
   <% end %>
+  </div>
 <% end %>

@@ -1,9 +1,9 @@
 <%= content_tag :div, id: "watchlist-#{post.id}" do %>
   <%= link_to watchlist_post_path(post), method: :patch, remote: true do %>
     <% if current_user&.voted_down_on? post, vote_scope: 'watchlist' %>
-      <i class="fa fa-clipboard-list text-danger"></i>
+      <i class="fa fa-clock text-danger"></i>
     <% else %>
-      <i class="fa fa-clipboard-list text-secondary"></i>
+      <i class="fa fa-clock text-secondary"></i>
     <% end %>
   <% end %>
 <% end %>
