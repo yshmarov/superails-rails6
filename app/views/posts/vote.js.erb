@@ -2,4 +2,6 @@ document.getElementById("like-count-<%= @post.id %>").innerHTML = "<%= j render 
 document.getElementById("downvote-<%= @post.id %>").innerHTML = "<%= j render "posts/downvote_link", post: @post %>";
 document.getElementById("upvote-<%= @post.id %>").innerHTML = "<%= j render "posts/upvote_link", post: @post %>";
 document.getElementById("bookmark-<%= @post.id %>").innerHTML = "<%= j render "posts/bookmark_link", post: @post %>";
+document.getElementById("complete-<%= @post.id %>").innerHTML = "<%= j render "posts/complete_link", post: @post %>";
+document.getElementById("watchlist-<%= @post.id %>").innerHTML = "<%= j render "posts/watchlist_link", post: @post %>";
 document.getElementById("progress-<%= @post.id %>").innerHTML = "<%= j render "posts/progress", post: @post %>";

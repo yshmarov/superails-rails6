@@ -20,6 +20,8 @@ Rails.application.routes.draw do
       patch "upvote", to: "posts#upvote"
       patch "downvote", to: "posts#downvote"
       patch "bookmark", to: "posts#bookmark"
+      patch "complete", to: "posts#complete"
+      patch "watchlist", to: "posts#watchlist"
     end
   end
 
