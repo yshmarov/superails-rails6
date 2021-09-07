@@ -1,6 +1,6 @@
 <%= content_tag :div, id: "upvote-#{post.id}" do %>
   <%= link_to upvote_post_path(post), method: :patch, remote: true do %>
-    <% if current_user&.voted_up_on? post %>
+    <% if current_user&.voted_up_on? post, vote_scope: 'like' %>
       <i class="far fa-thumbs-up text-success"></i>
     <% else %>
       <i class="far fa-thumbs-up text-secondary"></i>

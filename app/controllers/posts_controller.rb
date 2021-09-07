@@ -15,19 +15,19 @@ class PostsController < ApplicationController
   end
 
   def upvote
-    if current_user.voted_up_on? @post
-      @post.unvote_by current_user
+    if current_user.voted_up_on? @post, vote_scope: 'like'
+      @post.unvote_by current_user, vote_scope: 'like'
     else
-      @post.upvote_by current_user
+      @post.upvote_by current_user, vote_scope: 'like'
     end
     render "vote.js.erb"
   end
 
   def downvote
-    if current_user.voted_down_on? @post
-      @post.unvote_by current_user
+    if current_user.voted_down_on? @post, vote_scope: 'like'
+      @post.unvote_by current_user, vote_scope: 'like'
     else
-      @post.downvote_by current_user
+      @post.downvote_by current_user, vote_scope: 'like'
     end
     render "vote.js.erb"
   end
