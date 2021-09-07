@@ -19,6 +19,7 @@ Rails.application.routes.draw do
     member do
       patch "upvote", to: "posts#upvote"
       patch "downvote", to: "posts#downvote"
+      patch "bookmark", to: "posts#bookmark"
     end
   end
 

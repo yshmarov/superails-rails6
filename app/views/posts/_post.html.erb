@@ -14,6 +14,7 @@
   <div class='card-footer'>
     <h3>
       <div class='d-flex justify-content-center'>
+        <%= render 'posts/bookmark_link', post: post %>
         <%= render 'posts/upvote_link', post: post %>
         <%= render 'posts/like_count', post: post %>
         <%= render 'posts/downvote_link', post: post %>
