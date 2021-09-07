@@ -12,12 +12,21 @@
 <script src="https://player.vimeo.com/api/player.js">
 </script>
 
-<hr>
-Upvoters:
-<%= @post.votes_for.up.by_type(User).voters.pluck(:email) %>
-<hr>
-Downvoters:
-<%= @post.votes_for.down.by_type(User).voters.pluck(:email) %>
+<div class="container text-center">
+  <div class="row">
+    <div class="col-md-6">
+      Upvoters:
+      <br>
+      <%= @post.get_upvotes(vote_scope: 'like').by_type(User).voters.pluck(:email) %>
+    </div>
+    <div class="col-md-6">
+      Downvoters:
+      <br>
+      <%= @post.get_downvotes(vote_scope: 'like').by_type(User).voters.pluck(:email) %>
+    </div>
+  </div>
+</div>
+
 <hr>
 Comments:
 <%= @comments.count %>
