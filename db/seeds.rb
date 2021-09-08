@@ -12,13 +12,21 @@
     password: 123456
   )
   rand(0..5).times do
-    Post.create(
+    post = Post.create(
       title: Faker::Lorem.sentence(word_count: 5),
       description: Faker::Lorem.sentence(word_count: 15),
       body: Faker::Markdown.sandwich(sentences: 50),
       user: user,
       premium: [true, false].sample)
+    rand(0..3).times do
+      Comment.create(
+        body: Faker::Markdown.sandwich(sentences: 5),
+        commentable: post,
+        user: user
+        )
+    end
   end
 end
 p "#{User.count} users created"
 p "#{Post.count} posts created"
+p "#{Comment.count} comments created"
