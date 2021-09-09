@@ -4,6 +4,7 @@
       <%= premium_label(post.premium) %>
       <%= link_to_unless_current highlight(post.title, params.dig(:q, :title_or_description_cont)), post %>
     </h3>
+    <%= post.tags.pluck(:name) %>
     <p class="fst-italic">
       <%= highlight(post.description, params.dig(:q, :title_or_description_cont)) %>
     </p>

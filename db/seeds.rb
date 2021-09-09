@@ -27,6 +27,11 @@
     end
   end
 end
+
+['ruby', 'rails', 'stimulus', 'hotwire', 'javascript', 'api', 'react'].each do |tag|
+  Tag.create(name: tag)
+end
+
 p "#{User.count} users created"
 p "#{Post.count} posts created"
 p "#{Comment.count} comments created"
