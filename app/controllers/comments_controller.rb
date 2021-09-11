@@ -6,8 +6,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @commentable.comments.build(comment_params)
-    @comment.user = current_user
+    @comment = @commentable.comments.build(comment_params.merge({ user: current_user }))
     if @comment.save
       redirect_to @commentable unless @commentable.is_a?(Comment)
       redirect_to @commentable.find_parent if @commentable.is_a?(Comment)
