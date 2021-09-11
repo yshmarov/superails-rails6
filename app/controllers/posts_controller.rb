@@ -3,62 +3,35 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[ show edit update destroy upvote downvote bookmark watchlist complete ]
 
   def index
-    # @posts = Post.all.order(created_at: :desc)
     @q = Post.order(created_at: :desc).ransack(params[:q])
     @pagy, @posts = pagy(@q.result.includes(:user))
-
-    # if current_user&.active?
-    #   @posts = Post.all
-    # else
-    #   @posts = Post.free
-    # end
   end
 
   def upvote
-    if current_user.voted_up_on? @post, vote_scope: 'like'
-      @post.unvote_by current_user, vote_scope: 'like'
-    else
-      @post.upvote_by current_user, vote_scope: 'like'
-    end
+    @post.upvote! current_user
     render "vote.js.erb"
   end
 
   def downvote
-    if current_user.voted_down_on? @post, vote_scope: 'like'
-      @post.unvote_by current_user, vote_scope: 'like'
-    else
-      @post.downvote_by current_user, vote_scope: 'like'
-    end
+    @post.downvote! current_user
     render "vote.js.erb"
   end
 
   def bookmark
     # upvote
-    if current_user.voted_up_on? @post, vote_scope: 'bookmark'
-      @post.unvote_by current_user, vote_scope: 'bookmark'
-    else
-      @post.upvote_by current_user, vote_scope: 'bookmark'
-    end
+    @post.bookmark! current_user
     render "vote.js.erb"
   end
 
   def complete
     # upvote
-    if current_user.voted_up_on? @post, vote_scope: 'watchlist'
-      @post.unvote_by current_user, vote_scope: 'watchlist'
-    else
-      @post.upvote_by current_user, vote_scope: 'watchlist'
-    end
+    @post.complete! current_user
     render "vote.js.erb"
   end
 
   def watchlist
     # downvote
-    if current_user.voted_down_on? @post, vote_scope: 'watchlist'
-      @post.unvote_by current_user, vote_scope: 'watchlist'
-    else
-      @post.downvote_by current_user, vote_scope: 'watchlist'
-    end
+    @post.watchlist! current_user
     render "vote.js.erb"
   end
 
