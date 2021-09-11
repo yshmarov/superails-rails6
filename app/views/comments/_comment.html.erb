@@ -7,6 +7,8 @@
     <%= link_to comment.user.name, comment.user %>
     <%= link_to 'Delete comment', [@commentable, comment], method: :delete %>
   <% end %>
+  comments:
+  <%= comment.comments_count %>
   <%= link_to 'Reply', new_comment_comment_path(comment) %>
   <br>
   <%= render comment.comments %>

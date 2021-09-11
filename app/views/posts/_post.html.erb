@@ -17,6 +17,10 @@
     <% end %>
   </div>
   <div class='card-footer'>
+    Comments:
+    <%= post.comments_count %>
+  </div>
+  <div class='card-footer'>
     <h3>
       <div class='d-flex justify-content-center'>
         <%= render 'posts/bookmark_link', post: post %>

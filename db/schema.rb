@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_11_223504) do
+ActiveRecord::Schema.define(version: 2021_09_11_230006) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 2021_09_11_223504) do
     t.datetime "deleted_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "comments_count", default: 0, null: false
     t.index ["commentable_type", "commentable_id"], name: "index_comments_on_commentable"
     t.index ["deleted_at"], name: "index_comments_on_deleted_at"
     t.index ["user_id"], name: "index_comments_on_user_id"
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_09_11_223504) do
     t.integer "cached_weighted_like_score", default: 0
     t.integer "cached_weighted_like_total", default: 0
     t.float "cached_weighted_like_average", default: 0.0
+    t.integer "comments_count", default: 0, null: false
     t.index ["slug"], name: "index_posts_on_slug", unique: true
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
