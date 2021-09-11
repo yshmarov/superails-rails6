@@ -1,6 +1,11 @@
 <%= form_with(model: post) do |form| %>
   <%= render 'layouts/errors', form: form %>
 
+  <div class="field">
+    <%= form.label :tags %>
+    <%= form.select :tag_ids, Tag.all.pluck(:name, :id), {}, { multiple: true } %>
+  </div>
+
   <div class="field" data-controller="character-counter">
     <%= form.label :title %>
     <%= form.text_field :title,
