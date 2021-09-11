@@ -1,13 +1,5 @@
 <%= form_with(model: post) do |form| %>
-  <% if post.errors.any? %>
-    <div class='text-danger'>
-      <ul>
-        <% post.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'layouts/errors', form: form %>
 
   <div class="field" data-controller="character-counter">
     <%= form.label :title %>

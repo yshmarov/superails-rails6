@@ -1,13 +1,5 @@
 <%= form_with(model: [@commentable, comment]) do |form| %>
-  <% if comment.errors.any? %>
-    <div class='text-danger'>
-      <ul>
-        <% comment.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <%= render 'layouts/errors', form: form %>
 
   <div class="field" data-controller="character-counter">
     <%= form.text_area :body,
