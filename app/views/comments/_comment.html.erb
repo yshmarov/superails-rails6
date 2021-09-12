@@ -1,11 +1,14 @@
 <div class='comment'>
   <% if comment.deleted_at.present? %>
-    Comment has been deleted
+    <i>
+      Comment has been deleted
+    </i>
   <% else %>
     <%= comment.created_at %>
-    <%= markdown(comment.body) %>
+    by
     <%= link_to comment.user.name, comment.user %>
-    <%= link_to 'Delete comment', [@commentable, comment], method: :delete %>
+    <%= markdown(comment.body) %>
+    <%= link_to 'Delete', [@commentable, comment], method: :delete %>
   <% end %>
   comments:
   <%= comment.comments_count %>

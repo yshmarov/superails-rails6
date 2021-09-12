@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
   belongs_to :user, counter_cache: true
-  has_many :comments, as: :commentable
+  has_many :comments, -> { order(created_at: :desc) }, as: :commentable, dependent: :destroy
   has_many :taggings
-  has_many :tags, through: :taggings
+  has_many :tags, -> { order(:name) }, through: :taggings
 
   acts_as_votable
 

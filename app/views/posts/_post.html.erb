@@ -1,25 +1,28 @@
 <div class='card'>
-  <div class='card-body'>
+  <div class='card-header'>
     <h3>
       <%= premium_label(post.premium) %>
       <%= link_to_unless_current highlight(post.title, params.dig(:q, :title_or_description_cont)), post %>
     </h3>
-    <% post.tags.pluck(:name).each do |tag| %>
-      <div class='badge bg-info'>
-        <%= tag %>
-      </div>
-    <% end %>
     <p class="fst-italic">
       <%= highlight(post.description, params.dig(:q, :title_or_description_cont)) %>
     </p>
-    <% if controller_name == 'posts' && action_name == 'show' %>
+  </div>
+  <% if controller_name == 'posts' && action_name == 'show' %>
+    <%= render 'layouts/vimeo', vimeo_id: @post.description %>
+    <div class='card-body'>
       <%= markdown(post.body) %>
-    <% end %>
-  </div>
-  <div class='card-footer'>
-    Comments:
-    <%= post.comments_count %>
-  </div>
+    </div>
+  <% end %>
+  <% if post.tags.any? %>
+    <div class='card-footer'>
+      <% post.tags.pluck(:name).each do |tag| %>
+        <div class='badge bg-info'>
+          <%= tag %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
   <div class='card-footer'>
     <h3>
       <div class='d-flex justify-content-center'>
@@ -27,7 +30,6 @@
         <%= render 'posts/upvote_link', post: post %>
         <%= render 'posts/like_count', post: post %>
         <%= render 'posts/downvote_link', post: post %>
-
         <%= render 'posts/complete_link', post: post %>
         <%= render 'posts/watchlist_link', post: post %>
       </div>
@@ -36,10 +38,16 @@
     </h3>
   </div>
   <div class='card-footer'>
-    On <%= post.created_at.strftime('%d %b %Y') %>
-    by 
-    <%= image_tag post.user.image, size: "30x30", class: "rounded-circle d-inline-block align-top" if post.user.image %>
-    <%= link_to post.user.username, post.user %>
+    <div class='float-start'>
+      <i class="far fa-comment"></i>
+      <%= post.comments_count %>
+    </div>
+    <div class='float-end'>
+      On <%= post.created_at.strftime('%d %b %Y') %>
+      by 
+      <%= image_tag post.user.image, size: "30x30", class: "rounded-circle d-inline-block align-top" if post.user.image %>
+      <%= link_to post.user.username, post.user %>
+    </div>
   </div>
   <% if current_user == post.user %>
     <div class='card-footer'>

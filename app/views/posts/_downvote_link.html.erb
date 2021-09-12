@@ -1,7 +1,7 @@
 <%= content_tag :div, id: "downvote-#{post.id}" do %>
   <%= link_to downvote_post_path(post), method: :patch, remote: true do %>
     <% if current_user&.voted_down_on? post, vote_scope: 'like' %>
-      <i class="far fa-thumbs-down text-danger"></i>
+      <i class="fa fa-thumbs-down text-danger"></i>
     <% else %>
       <i class="far fa-thumbs-down text-secondary"></i>
     <% end %>
