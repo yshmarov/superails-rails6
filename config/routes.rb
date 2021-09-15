@@ -10,6 +10,8 @@ Rails.application.routes.draw do
   get 'pricing', to: 'static_public#pricing'
   get 'about', to: 'static_public#about'
 
+  resources :tags, only: :create
+
   resources :comments, only: [] do
     resources :comments, only: %i[new create destroy], module: :comments
   end
