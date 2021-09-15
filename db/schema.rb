@@ -106,10 +106,6 @@ ActiveRecord::Schema.define(version: 2021_09_11_230006) do
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
     t.integer "posts_count", default: 0, null: false
-    t.string "stripe_customer_id"
-    t.string "plan"
-    t.string "subscription_status", default: "incomplete"
-    t.datetime "current_period_end"
     t.string "slug"
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true

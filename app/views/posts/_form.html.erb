@@ -3,7 +3,7 @@
 
   <div class="field">
     <%= form.label :tags %>
-    <%= form.select :tag_ids, Tag.all.pluck(:name, :id), {}, { multiple: true } %>
+    <%= form.select :tag_ids, Tag.all.pluck(:name, :id), {}, { multiple: true, id: "select-tags" } %>
   </div>
 
   <div class="field" data-controller="character-counter">
@@ -32,15 +32,15 @@
       style: "width: 100%",
       rows: 8,
       data: { controller: "textarea-autogrow", character_counter_target: 'input' },
-      maxlength: Post::MAX_BODY_LENGTH, 
-      placeholder: 'User Markdown for formatting' 
+      maxlength: Post::MAX_BODY_LENGTH,
+      placeholder: 'User Markdown for formatting'
     %>
     <strong data-character-counter-target="counter"></strong>/<%= Post::MAX_BODY_LENGTH%> characters
   </div>
 
   <div class="field">
-    <%= form.label :premium %>
-    <%= form.check_box :premium %>
+    <%#= form.label :premium %>
+    <%#= form.check_box :premium %>
   </div>
 
   <div class="actions">

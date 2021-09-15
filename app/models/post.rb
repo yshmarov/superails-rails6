@@ -1,18 +1,18 @@
 class Post < ApplicationRecord
   belongs_to :user, counter_cache: true
   has_many :comments, -> { order(created_at: :desc) }, as: :commentable, dependent: :destroy
-  has_many :taggings
+  has_many :taggings, dependent: :destroy
   has_many :tags, -> { order(:name) }, through: :taggings
 
   acts_as_votable
 
   extend FriendlyId
   friendly_id :title, use: [:slugged, :finders, :history]
-  
+
   def should_generate_new_friendly_id?
     title_changed?
   end
-  
+
   validates :title, presence: true
   validates :description, presence: true
   validates :body, presence: true

@@ -45,16 +45,16 @@
     <%= user.created_at.strftime('%d %b %Y') %>
     <br>
     <b><%= 'stripe_customer_id'.humanize %>:</b>
-    <%= user.stripe_customer_id %>
+    <%= user.stripe_customer_id rescue nil%>
     <br>
     <b><%= 'plan'.humanize %>:</b>
-    <%= user.plan %>
+    <%= user.plan rescue nil %>
     <br>
     <b><%= 'subscription_status'.humanize %>:</b>
-    <%= user.subscription_status %>
+    <%= user.subscription_status rescue nil %>
     <br>
     <b><%= 'current_period_end'.humanize %>:</b>
-    <%= user.current_period_end&.strftime('%d %b %Y') %>
+    <%= user.current_period_end&.strftime('%d %b %Y') rescue nil %>
     <br>
     <b><%= 'posts_count'.humanize %>:</b>
     <%= user.posts_count %>

@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  devise_for :users, 
+  devise_for :users,
     controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
                    confirmations: 'users/confirmations',
                    registrations: 'users/registrations'
@@ -9,6 +9,8 @@ Rails.application.routes.draw do
   get 'terms', to: 'static_public#terms'
   get 'pricing', to: 'static_public#pricing'
   get 'about', to: 'static_public#about'
+
+  resources :tags, only: :create
 
   resources :comments, only: [] do
     resources :comments, only: %i[new create destroy], module: :comments

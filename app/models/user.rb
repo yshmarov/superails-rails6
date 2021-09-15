@@ -1,9 +1,9 @@
 class User < ApplicationRecord
-  # :lockable, :timeoutable 
+  # :lockable, :timeoutable
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :trackable, :confirmable,
-         :omniauthable, omniauth_providers: [:google_oauth2, :github] 
+         :omniauthable, omniauth_providers: [:google_oauth2, :github]
 
   has_many :invitees, class_name: 'User', foreign_key: :invited_by_id
   has_many :posts, dependent: :restrict_with_error
@@ -35,9 +35,7 @@ class User < ApplicationRecord
   end
 
   after_create do
-    Stripe::Customer.create(email: email)
-    # customer = Stripe::Customer.create(email: email)
-    # update(stripe_customer_id: customer.id)
+    # Stripe::Customer.create(email: email)
   end
 
   def username
