@@ -1,12 +1,8 @@
-<%= content_tag :div, id: "progress-#{@post.id}" do %>
-  <% if @post.votes_for.any? %>
-    <div class="progress">
-      <div class="progress-bar bg-success" role="progressbar" style="width: <%= upvote_percentage %>">
-        <%= cached_scoped_like_votes_up %>
-      </div>
-      <div class="progress-bar bg-danger" role="progressbar" style="width: <%= downvote_percentage %>">
-        <%= cached_scoped_like_votes_down %>
-      </div>
-    </div>
-  <% end %>
-<% end %>
+<div class="progress">
+  <div class="progress-bar bg-success" role="progressbar" style="width: <%= upvote_percentage %>">
+    <%= cached_scoped_like_votes_up %>
+  </div>
+  <div class="progress-bar bg-danger" role="progressbar" style="width: <%= downvote_percentage %>">
+    <%= cached_scoped_like_votes_down %>
+  </div>
+</div>

@@ -34,7 +34,10 @@
         <%= render 'posts/watchlist_link', post: post %>
       </div>
     </h3>
-    <%= render(PostProgressComponent.new(post: post)) %>
+    <%= content_tag :div, id: "progress-#{post.id}" do %>
+      <%= render(PostProgressComponent.new(post: post)) do %>
+      <% end %>
+    <% end %>
   </div>
   <div class='card-footer'>
     <div class='float-start'>

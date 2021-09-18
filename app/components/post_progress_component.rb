@@ -5,9 +5,9 @@ class PostProgressComponent < ViewComponent::Base
     @post = post
   end
 
-  # def render?
-  #   @post.votes_for.any?
-  # end
+  def render?
+    @post.votes_for.any?
+  end
 
   def upvote_percentage
     number_to_percentage(@post.upvote_percentage, precision: 0)
