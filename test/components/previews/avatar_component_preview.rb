@@ -1,9 +1,9 @@
 class AvatarComponentPreview < ViewComponent::Preview
-  def when_image
-    render(AvatarComponent.new(user: User.find(6)))
+  def with_image
+    render(AvatarComponent.new(user: User.where.not(image: nil).first))
   end
 
-  def when_no_image
-    render(AvatarComponent.new(user: User.first))
+  def without_image
+    render(AvatarComponent.new(user: User.where(image: nil).first))
   end
 end
