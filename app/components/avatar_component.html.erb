@@ -1,0 +1,6 @@
+<% if @user.image? %>
+  <%= image_tag @user.image, size: "30x30", class: "rounded-circle d-inline-block align-top" %>
+<% else %>
+  <i class="fa fa-user"></i>
+<% end %>
+<b><%= @user.username %></b>
