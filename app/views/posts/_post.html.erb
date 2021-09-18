@@ -33,9 +33,8 @@
         <%= render 'posts/complete_link', post: post %>
         <%= render 'posts/watchlist_link', post: post %>
       </div>
-      <br>
-      <%= render 'posts/progress', post: post %>
     </h3>
+    <%= render(PostProgressComponent.new(post: post)) %>
   </div>
   <div class='card-footer'>
     <div class='float-start'>
