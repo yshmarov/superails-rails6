@@ -35,7 +35,7 @@
       </div>
     </h3>
     <%= content_tag :div, id: "progress-#{post.id}" do %>
-      <%= render(PostProgressComponent.new(post: post)) do %>
+      <%= render(Posts::ProgressComponent.new(post: post)) do %>
       <% end %>
     <% end %>
   </div>

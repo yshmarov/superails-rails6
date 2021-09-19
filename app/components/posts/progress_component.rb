@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class PostProgressComponent < ViewComponent::Base
+class Posts::ProgressComponent < ViewComponent::Base
   def initialize(post:)
     @post = post
   end
