@@ -20,5 +20,4 @@ class Comment < ApplicationRecord
 
     commentable.find_parent
   end
-
 end

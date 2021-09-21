@@ -47,6 +47,7 @@ module ApplicationHelper
   end
 
   # rubocop :disable Rails/OutputSafety
+  # rubocop :disable Metrics/MethodLength
   def markdown(text)
     options = {
       filter_html: true,
@@ -63,7 +64,7 @@ module ApplicationHelper
       no_intra_emphasis: true,
       strikethrough: true,
       superscript: true,
-      disable_indented_code_blocks: true,
+      disable_indented_code_blocks: true
     }
 
     # Redcarpet::Markdown.new(HTML.new(options), extensions).render(text).html_safe
@@ -73,4 +74,5 @@ module ApplicationHelper
     markdown.render(text).html_safe
   end
   # rubocop :enable Rails/OutputSafety
+  # rubocop :enable Metrics/MethodLength
 end

@@ -20,17 +20,33 @@ Rails/Output:
 Style/EmptyMethod:
   Enabled: false
 
+Bundler/OrderedGems:
+  Enabled: false
+  
+Lint/UnusedMethodArgument:
+  Enabled: false
+
 # bundle exec rubocop -A
 # bundle exec rubocop -a
 # bundle exec rubocop -A --only Style/FrozenStringLiteralComment
 
+# Layout/EmptyLinesAroundAccessModifier
+# Style/NumericLiterals
+# Style/OrAssignment
+# Layout/EmptyLinesAroundClassBody
 # Layout/SpaceAroundOperators
+# Style/SymbolArray
+# Rails/TimeZone
+# Style/TrailingCommaInHashLiteral
+# Layout/SpaceInsideHashLiteralBraces
 # Layout/IndentationWidth
+# Style/IfUnlessModifier
 # Layout/IndentationConsistency
 # Style/MethodDefParentheses
 # Layout/TrailingEmptyLines
 # Layout/EmptyLineAfterGuardClause
 # Style/RedundantSelf
+# Style/UnlessElse
 # Layout/SpaceAfterComma
 # Style/FrozenStringLiteralComment
 # Layout/EmptyLineAfterMagicComment

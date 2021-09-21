@@ -58,9 +58,7 @@ class PostsController < ApplicationController
 
   def edit
     set_meta_tags title: "#{action_name.capitalize} #{controller_name.singularize.capitalize}"
-    unless @post.user == current_user
-      redirect_to posts_path, alert: 'You are not authorized'
-    end
+    redirect_to posts_path, alert: 'You are not authorized' unless @post.user == current_user
   end
 
   def create
@@ -73,27 +71,28 @@ class PostsController < ApplicationController
   end
 
   def update
-    unless @post.user == current_user
-      redirect_to posts_path, alert: 'You are not authorized'
-    else
+    if @post.user == current_user
       if @post.update(post_params)
         redirect_to @post, notice: 'Post was successfully updated.'
       else
         render :edit, status: :unprocessable_entity
       end
+    else
+      redirect_to posts_path, alert: 'You are not authorized'
     end
   end
 
   def destroy
-    unless @post.user == current_user
-      redirect_to posts_path, alert: 'You are not authorized'
-    else
+    if @post.user == current_user
       @post.destroy
       redirect_to posts_url, notice: 'Post was successfully destroyed.'
+    else
+      redirect_to posts_path, alert: 'You are not authorized'
     end
   end
 
   private
+
   def set_post
     @post = Post.find(params[:id])
 

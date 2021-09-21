@@ -8,7 +8,10 @@ class StaticPublicController < ApplicationController
   end
 
   def pricing
+    # TODO
+    # rubocop :disable all
     @pricing = Stripe::Price.list(lookup_keys: ['pro_monthly', 'pro_yearly'], expand: ['data.product']).data.sort_by {|p| p.unit_amount}
+    # rubocop :enable all
   end
 
   def privacy

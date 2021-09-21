@@ -5,9 +5,9 @@ class User < ApplicationRecord
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :trackable, :confirmable,
-         :omniauthable, omniauth_providers: [:google_oauth2, :github]
+         :omniauthable, omniauth_providers: %i[google_oauth2 github]
 
-  has_many :invitees, class_name: 'User', foreign_key: :invited_by_id
+  has_many :invitees, class_name: 'User', foreign_key: :invited_by_id, dependent: :nullify
   has_many :posts, dependent: :restrict_with_error
 
   acts_as_voter
@@ -15,15 +15,14 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :username, use: :slugged
 
+  # rubocop :disable Metrics/AbcSize
   def self.from_omniauth(access_token)
     user = User.where(email: access_token.info.email).first
 
-    unless user
-      user = User.create(
+    user ||= User.create(
         email: access_token.info.email,
         password: Devise.friendly_token[0, 20]
       )
-    end
 
     user.provider = access_token.provider
     user.uid = access_token.uid
@@ -35,11 +34,10 @@ class User < ApplicationRecord
 
     user
   end
+  # rubocop :enable Metrics/AbcSize
 
   after_create do
     Stripe::Customer.create(email: email)
-    # customer = Stripe::Customer.create(email: email)
-    # update(stripe_customer_id: customer.id)
   end
 
   def username
