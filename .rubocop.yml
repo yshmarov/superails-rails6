@@ -1,4 +1,6 @@
-require: rubocop-rails
+require: 
+  - rubocop-rails
+  - rubocop-performance
 
 AllCops:
   TargetRubyVersion: 3.0.1
