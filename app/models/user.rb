@@ -20,9 +20,9 @@ class User < ApplicationRecord
     user = User.where(email: access_token.info.email).first
 
     user ||= User.create(
-        email: access_token.info.email,
-        password: Devise.friendly_token[0, 20]
-      )
+      email: access_token.info.email,
+      password: Devise.friendly_token[0, 20]
+    )
 
     user.provider = access_token.provider
     user.uid = access_token.uid

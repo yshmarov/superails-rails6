@@ -33,7 +33,16 @@ Layout/FirstHashElementIndentation:
 # bundle exec rubocop -a
 # bundle exec rubocop -A --only Style/FrozenStringLiteralComment
 
+# Layout/ClosingParenthesisIndentation
+# Layout/FirstArgumentIndentation
 # Style/HashSyntax
+# Style/ExplicitBlockArgument
+  # bad
+  # link_to path do
+  #   yield
+  # end
+  # good
+  # link_to path, &block
 # Layout/SpaceInsidePercentLiteralDelimiters
 # Style/TrailingCommaInArrayLiteral
 # Layout/EmptyLinesAroundAccessModifier

@@ -9,19 +9,15 @@ module ApplicationHelper
     end
   end
 
-  def deep_active_link_to(path)
+  def deep_active_link_to(path, &block)
     content_tag(:li, class: "#{'active fw-bold' if current_page?(path)} nav-item") do
-      link_to path, class: 'nav-link' do
-        yield
-      end
+      link_to path, class: 'nav-link', &block
     end
   end
 
-  def deep_active_link_to_dropdown_item(path)
+  def deep_active_link_to_dropdown_item(path, &block)
     content_tag(:li) do
-      link_to path, class: "#{'active fw-bold' if current_page?(path)} dropdown-item" do
-        yield
-      end
+      link_to path, class: "#{'active fw-bold' if current_page?(path)} dropdown-item", &block
     end
   end
 
