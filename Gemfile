@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -42,6 +44,7 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  gem 'rubocop-rails', require: false
 end
 
 group :test do
@@ -57,14 +60,14 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'devise'
 gem 'omniauth-google-oauth2'
-gem "omniauth-rails_csrf_protection"
+gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
-gem "letter_opener", group: :development
+gem 'letter_opener', group: :development
 gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master', group: :development
 gem 'pagy', '~> 3.5'
 gem 'ransack'
 gem 'devise_invitable', '~> 2.0.0'
-gem "redcarpet"
+gem 'redcarpet'
 gem 'rouge'
 gem 'stripe'
 gem 'acts_as_votable'

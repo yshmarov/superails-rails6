@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :commentable, polymorphic: true, counter_cache: true
@@ -14,8 +16,9 @@ class Comment < ApplicationRecord
   end
 
   def find_parent
-    return self.commentable unless self.commentable.is_a?(Comment)
-    self.commentable.find_parent
+    return commentable unless commentable.is_a?(Comment)
+
+    commentable.find_parent
   end
 
 end

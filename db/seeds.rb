@@ -40,7 +40,6 @@
   end
 end
 
-
 p "#{User.count} users created"
 p "#{Post.count} posts created"
 p "#{Comment.count} comments created"

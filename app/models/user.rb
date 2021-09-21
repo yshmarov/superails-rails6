@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
-  # :lockable, :timeoutable 
+  # :lockable, :timeoutable
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :trackable, :confirmable,
-         :omniauthable, omniauth_providers: [:google_oauth2, :github] 
+         :omniauthable, omniauth_providers: [:google_oauth2, :github]
 
   has_many :invitees, class_name: 'User', foreign_key: :invited_by_id
   has_many :posts, dependent: :restrict_with_error
@@ -19,7 +21,7 @@ class User < ApplicationRecord
     unless user
       user = User.create(
         email: access_token.info.email,
-        password: Devise.friendly_token[0,20]
+        password: Devise.friendly_token[0, 20]
       )
     end
 
@@ -53,6 +55,6 @@ class User < ApplicationRecord
   end
 
   def active?
-    subscription_status == "active"
+    subscription_status == 'active'
   end
 end
