@@ -26,10 +26,16 @@ Bundler/OrderedGems:
 Lint/UnusedMethodArgument:
   Enabled: false
 
+Layout/FirstHashElementIndentation:
+  Enabled: false
+
 # bundle exec rubocop -A
 # bundle exec rubocop -a
 # bundle exec rubocop -A --only Style/FrozenStringLiteralComment
 
+# Style/HashSyntax
+# Layout/SpaceInsidePercentLiteralDelimiters
+# Style/TrailingCommaInArrayLiteral
 # Layout/EmptyLinesAroundAccessModifier
 # Style/NumericLiterals
 # Style/OrAssignment

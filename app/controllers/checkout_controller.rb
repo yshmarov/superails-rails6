@@ -8,7 +8,7 @@ class CheckoutController < ApplicationController
       cancel_url: pricing_url,
       payment_method_types: ['card'],
       line_items: [
-        { price: params[:price], quantity: 1 },
+        { price: params[:price], quantity: 1 }
       ],
       mode: 'subscription'
     })

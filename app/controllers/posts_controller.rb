@@ -2,7 +2,7 @@
 
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
-  before_action :set_post, only: %i[ show edit update destroy upvote downvote bookmark watchlist complete ]
+  before_action :set_post, only: %i[show edit update destroy upvote downvote bookmark watchlist complete]
 
   def index
     @q = Post.order(created_at: :desc).ransack(params[:q])
