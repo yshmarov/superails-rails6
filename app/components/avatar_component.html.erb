@@ -1,5 +1,5 @@
 <% if @user.image? %>
-  <%= image_tag @user.image, size: size, class: "rounded-circle d-inline-block align-top" %>
+  <%= image_tag @user.image, size: size, alt: @alt, class: "rounded-circle d-inline-block align-top" %>
 <% else %>
   <i class="fa fa-user"></i>
 <% end %>

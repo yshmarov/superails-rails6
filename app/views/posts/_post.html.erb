@@ -47,7 +47,7 @@
     <div class='float-end'>
       On <%= post.created_at.strftime('%d %b %Y') %>
       by 
-      <%= render(AvatarComponent.new(user: post.user, size: "50x50")) %>
+      <%= render(AvatarComponent.new(user: post.user, size: "50x50", alt: post.title)) %>
     </div>
   </div>
   <% if current_user == post.user %>

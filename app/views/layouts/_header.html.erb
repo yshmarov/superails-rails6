@@ -37,7 +37,7 @@
         <% if current_user %>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <%= render(AvatarComponent.new(user: current_user)) %>
+              <%= render(AvatarComponent.new(user: current_user, alt: current_user.username)) %>
             </a>
             <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
               <%= deep_active_link_to_dropdown_item user_path(current_user) do %>
