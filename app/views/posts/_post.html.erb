@@ -47,8 +47,7 @@
     <div class='float-end'>
       On <%= post.created_at.strftime('%d %b %Y') %>
       by 
-      <%= image_tag post.user.image, size: "30x30", class: "rounded-circle d-inline-block align-top" if post.user.image %>
-      <%= link_to post.user.username, post.user %>
+      <%= render(AvatarComponent.new(user: post.user, size: "50x50")) %>
     </div>
   </div>
   <% if current_user == post.user %>
