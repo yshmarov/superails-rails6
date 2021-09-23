@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 class UsersController < ApplicationController
   def index
     @q = User.order(created_at: :desc).ransack(params[:q])
