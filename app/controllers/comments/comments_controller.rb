@@ -1,6 +1,7 @@
+# frozen_string_literal: true
+
 module Comments
   class CommentsController < CommentsController
-
     private
 
     def set_commentable
