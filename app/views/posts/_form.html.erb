@@ -1,7 +1,7 @@
 <%= form_with(model: post) do |form| %>
   <%= render 'layouts/errors', form: form %>
 
-  <div class="field">
+  <div class="field" data-controller="tom-select">
     <%= form.label :tags %>
     <%= form.select :tag_ids, Tag.all.pluck(:name, :id), {}, { multiple: true, id: 'select-tags' } %>
   </div>

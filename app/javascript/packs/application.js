@@ -13,7 +13,6 @@ import 'bootstrap'
 import "stylesheets/application"
 
 import 'controllers'
-require("utilities/tom_select")
 
 Rails.start()
 Turbolinks.start()
