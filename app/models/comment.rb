@@ -14,8 +14,8 @@ class Comment < ApplicationRecord
   end
 
   def find_parent
-    return self.commentable unless self.commentable.is_a?(Comment)
-    self.commentable.find_parent
-  end
+    return commentable unless commentable.is_a?(Comment)
 
+    commentable.find_parent
+  end
 end
