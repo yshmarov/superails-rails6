@@ -1,4 +1,13 @@
 class AvatarComponentPreview < ViewComponent::Preview
+  def with_custom_size_image
+    render(AvatarComponent.new(user: User.where.not(image: nil).first, size: '500x300'))
+  end
+
+  def with_custom_alt
+    user = User.where.not(image: nil).first
+    render(AvatarComponent.new(user: user, alt: user.email))
+  end
+
   def with_image
     render(AvatarComponent.new(user: User.where.not(image: nil).first))
   end
