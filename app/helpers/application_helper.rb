@@ -1,26 +1,24 @@
+# frozen_string_literal: true
+
 module ApplicationHelper
   include Pagy::Frontend
 
   def active_link_to(name, path)
     content_tag(:li, class: "#{'active fw-bold' if current_page?(path)} nav-item") do
-      link_to name, path, class: "nav-link"
+      link_to name, path, class: 'nav-link'
     end
-  end 
-  
-  def deep_active_link_to(path)
+  end
+
+  def deep_active_link_to(path, &block)
     content_tag(:li, class: "#{'active fw-bold' if current_page?(path)} nav-item") do
-      link_to path, class: "nav-link" do
-        yield
-      end
-    end 
-  end 
-  
-  def deep_active_link_to_dropdown_item(path)
+      link_to path, class: 'nav-link', &block
+    end
+  end
+
+  def deep_active_link_to_dropdown_item(path, &block)
     content_tag(:li) do
-      link_to path, class: "#{'active fw-bold' if current_page?(path)} dropdown-item" do
-        yield
-      end
-    end 
+      link_to path, class: "#{'active fw-bold' if current_page?(path)} dropdown-item", &block
+    end
   end
 
   def boolean_label(value)
@@ -38,13 +36,13 @@ module ApplicationHelper
   require 'rouge/plugins/redcarpet'
 
   class HTML < Redcarpet::Render::HTML
-   def initialize(extensions = {})
-     super extensions.merge(link_attributes: { target: '_blank' })
-   end
+    def initialize(extensions = {})
+      super extensions.merge(link_attributes: { target: '_blank' })
+    end
     include Rouge::Plugins::Redcarpet
   end
 
-  def markdown(text)
+  def markdown(text) # rubocop:todo Metrics/MethodLength
     options = {
       filter_html: true,
       hard_wrap: true,
@@ -60,13 +58,13 @@ module ApplicationHelper
       no_intra_emphasis: true,
       strikethrough: true,
       superscript: true,
-      disable_indented_code_blocks: true,
+      disable_indented_code_blocks: true
     }
 
     # Redcarpet::Markdown.new(HTML.new(options), extensions).render(text).html_safe
     # these 3 lines do same as above 1 line
     renderer = HTML.new(options)
     markdown = Redcarpet::Markdown.new(renderer, extensions)
-    markdown.render(text).html_safe
+    markdown.render(text).html_safe # rubocop:todo Rails/OutputSafety
   end
 end

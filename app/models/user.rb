@@ -1,11 +1,15 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
-  # :lockable, :timeoutable 
+  # :lockable, :timeoutable
   devise :invitable, :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable,
          :trackable, :confirmable,
-         :omniauthable, omniauth_providers: [:google_oauth2, :github] 
+         :omniauthable, omniauth_providers: %i[google_oauth2 github]
 
-  has_many :invitees, class_name: 'User', foreign_key: :invited_by_id
+  # rubocop:todo Rails/InverseOf
+  has_many :invitees, class_name: 'User', foreign_key: :invited_by_id, dependent: :nullify
+  # rubocop:enable Rails/InverseOf
   has_many :posts, dependent: :restrict_with_error
 
   acts_as_voter
@@ -13,31 +17,27 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :username, use: :slugged
 
-  def self.from_omniauth(access_token)
+  # rubocop:todo Metrics/MethodLength
+  def self.from_omniauth(access_token) # rubocop:todo Metrics/AbcSize, Metrics/MethodLength
     user = User.where(email: access_token.info.email).first
 
-    unless user
-      user = User.create(
-        email: access_token.info.email,
-        password: Devise.friendly_token[0,20]
-      )
-    end
-
-    user.provider = access_token.provider
-    user.uid = access_token.uid
-    user.name = access_token.info.name
-    user.image = access_token.info.image
-    # user.confirmed_at = Time.zone.now
+    user ||= User.create(
+      email: access_token.info.email,
+      password: Devise.friendly_token[0, 20],
+      provider: access_token.provider,
+      uid: access_token.uid,
+      name: access_token.info.name,
+      image: access_token.info.image
+    )
     user.skip_confirmation!
     user.save
 
     user
   end
+  # rubocop:enable Metrics/MethodLength
 
   after_create do
     Stripe::Customer.create(email: email)
-    # customer = Stripe::Customer.create(email: email)
-    # update(stripe_customer_id: customer.id)
   end
 
   def username
@@ -53,6 +53,6 @@ class User < ApplicationRecord
   end
 
   def active?
-    subscription_status == "active"
+    subscription_status == 'active'
   end
 end

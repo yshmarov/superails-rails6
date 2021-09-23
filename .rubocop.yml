@@ -1,0 +1,25 @@
+require:
+  - rubocop-rails
+
+AllCops:
+  TargetRubyVersion: 3.0.1
+  Exclude:
+    - '**/db/**/*'
+    - 'config/**/*'
+    - 'bin/*'
+    - 'config.ru'
+
+Style/Documentation:
+  Enabled: false
+
+Bundler/OrderedGems:
+  Enabled: false
+
+Style/EmptyMethod:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Rails/Output:
+  Enabled: false
