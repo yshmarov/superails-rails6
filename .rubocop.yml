@@ -20,3 +20,6 @@ Style/EmptyMethod:
 
 Lint/UnusedMethodArgument:
   Enabled: false
+
+Rails/Output:
+  Enabled: false

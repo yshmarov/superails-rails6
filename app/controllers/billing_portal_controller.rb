@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class BillingPortalController < ApplicationController
   def create
     portal_session = Stripe::BillingPortal::Session.create({

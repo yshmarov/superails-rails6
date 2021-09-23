@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class User < ApplicationRecord
   # :lockable, :timeoutable
   devise :invitable, :database_authenticatable, :registerable,
@@ -5,7 +7,7 @@ class User < ApplicationRecord
          :trackable, :confirmable,
          :omniauthable, omniauth_providers: %i[google_oauth2 github]
 
-  has_many :invitees, class_name: 'User', foreign_key: :invited_by_id
+  has_many :invitees, class_name: 'User', foreign_key: :invited_by_id, dependent: :nullify
   has_many :posts, dependent: :restrict_with_error
 
   acts_as_voter
@@ -18,14 +20,12 @@ class User < ApplicationRecord
 
     user ||= User.create(
       email: access_token.info.email,
-      password: Devise.friendly_token[0, 20]
+      password: Devise.friendly_token[0, 20],
+      provider: access_token.provider,
+      uid: access_token.uid,
+      name: access_token.info.name,
+      image: access_token.info.image
     )
-
-    user.provider = access_token.provider
-    user.uid = access_token.uid
-    user.name = access_token.info.name
-    user.image = access_token.info.image
-    # user.confirmed_at = Time.zone.now
     user.skip_confirmation!
     user.save
 

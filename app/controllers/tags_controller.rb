@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class TagsController < ApplicationController
   def create
     tag = Tag.new(tag_params)

@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class Comment < ApplicationRecord
   belongs_to :user
-  belongs_to :commentable, polymorphic: true, counter_cache: true
+  belongs_to :commentable, polymorphic: true, counter_cache: true, inverse_of: :comments
   has_many :comments, as: :commentable, dependent: :destroy
 
   MIN_BODY_LENGTH = 2
