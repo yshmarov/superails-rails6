@@ -1,6 +1,5 @@
 module Posts
   class CommentsController < CommentsController
-
     private
 
     def set_commentable

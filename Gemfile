@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.4.4', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'rubocop-rails', require: false
 end
 
@@ -54,18 +54,18 @@ group :test do
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 gem 'devise'
 gem 'omniauth-google-oauth2'
-gem "omniauth-rails_csrf_protection"
+gem 'omniauth-rails_csrf_protection'
 gem 'omniauth-github', github: 'omniauth/omniauth-github', branch: 'master'
-gem "letter_opener", group: :development
-gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'master', group: :development
+gem 'letter_opener', group: :development
+gem 'faker', git: 'https://github.com/faker-ruby/faker.git', branch: 'master', group: :development
 gem 'pagy', '~> 3.5'
 gem 'ransack'
 gem 'devise_invitable', '~> 2.0.0'
-gem "redcarpet"
+gem 'redcarpet'
 gem 'rouge'
 gem 'stripe'
 gem 'acts_as_votable'
