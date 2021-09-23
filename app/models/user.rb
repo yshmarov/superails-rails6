@@ -7,7 +7,9 @@ class User < ApplicationRecord
          :trackable, :confirmable,
          :omniauthable, omniauth_providers: %i[google_oauth2 github]
 
+  # rubocop:todo Rails/InverseOf
   has_many :invitees, class_name: 'User', foreign_key: :invited_by_id, dependent: :nullify
+  # rubocop:enable Rails/InverseOf
   has_many :posts, dependent: :restrict_with_error
 
   acts_as_voter
@@ -15,7 +17,8 @@ class User < ApplicationRecord
   extend FriendlyId
   friendly_id :username, use: :slugged
 
-  def self.from_omniauth(access_token)
+  # rubocop:todo Metrics/MethodLength
+  def self.from_omniauth(access_token) # rubocop:todo Metrics/AbcSize, Metrics/MethodLength
     user = User.where(email: access_token.info.email).first
 
     user ||= User.create(
@@ -31,11 +34,10 @@ class User < ApplicationRecord
 
     user
   end
+  # rubocop:enable Metrics/MethodLength
 
   after_create do
     Stripe::Customer.create(email: email)
-    # customer = Stripe::Customer.create(email: email)
-    # update(stripe_customer_id: customer.id)
   end
 
   def username
