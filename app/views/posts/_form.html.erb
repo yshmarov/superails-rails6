@@ -3,7 +3,7 @@
 
   <div class="field">
     <%= form.label :tags %>
-    <%= form.select :tag_ids, Tag.all.pluck(:name, :id), {}, { multiple: true } %>
+    <%= form.select :tag_ids, Tag.all.pluck(:name, :id), {}, { multiple: true, id: 'select-tags' } %>
   </div>
 
   <div class="field" data-controller="character-counter">
