@@ -33,9 +33,11 @@
         <%= render 'posts/complete_link', post: post %>
         <%= render 'posts/watchlist_link', post: post %>
       </div>
-      <br>
-      <%= render 'posts/progress', post: post %>
     </h3>
+    <%= content_tag :div, id: "progress-#{post.id}" do %>
+      <%= render(Posts::ProgressComponent.new(post: post)) do %>
+      <% end %>
+    <% end %>
   </div>
   <div class='card-footer'>
     <div class='float-start'>
@@ -45,8 +47,7 @@
     <div class='float-end'>
       On <%= post.created_at.strftime('%d %b %Y') %>
       by 
-      <%= image_tag post.user.image, size: "30x30", class: "rounded-circle d-inline-block align-top" if post.user.image %>
-      <%= link_to post.user.username, post.user %>
+      <%= render(AvatarComponent.new(user: post.user, size: "50x50", alt: post.title)) %>
     </div>
   </div>
   <% if current_user == post.user %>

@@ -1,7 +1,8 @@
 <div class='card'>
+  <div class='card-header'>
+    <%= render(AvatarComponent.new(user: user)) %>
+  </div>
   <div class='card-body'>
-    <%= image_tag user.image, size: "30x30", class: "rounded-circle d-inline-block align-top" if user.image %>
-    <br>
     <b><%= 'id'.humanize %>:</b>
     <%= user.id %>
     <br>
@@ -33,13 +34,19 @@
     <%= user.last_sign_in_ip %>
     <br>
     <b><%= 'confirmed'.humanize %>:</b>
-    <%= boolean_label(user.confirmed?) %>
+    <%= render(BooleanLabelComponent.new(value: user.confirmed?)) do %>
+      <%= user.confirmed? %>
+    <% end %>
     <br>
     <b><%= 'created_by_invite'.humanize %>:</b>
-    <%= boolean_label(user.created_by_invite?) %>
+    <%= render(BooleanLabelComponent.new(value: user.created_by_invite?)) do %>
+      <%= user.created_by_invite? %>
+    <% end %>
     <br>
     <b><%= 'invitation_accepted_at'.humanize %>:</b>
-    <%= boolean_label(user.invitation_accepted_at?) %>
+    <%= render(BooleanLabelComponent.new(value: user.invitation_accepted_at?)) do %>
+      <%= user.invitation_accepted_at? %>
+    <% end %>
     <br>
     <b><%= 'created_at'.humanize %>:</b>
     <%= user.created_at.strftime('%d %b %Y') %>

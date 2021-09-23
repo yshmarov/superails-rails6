@@ -4,4 +4,4 @@ document.getElementById("upvote-<%= @post.id %>").innerHTML = "<%= j render "pos
 document.getElementById("bookmark-<%= @post.id %>").innerHTML = "<%= j render "posts/bookmark_link", post: @post %>";
 document.getElementById("complete-<%= @post.id %>").innerHTML = "<%= j render "posts/complete_link", post: @post %>";
 document.getElementById("watchlist-<%= @post.id %>").innerHTML = "<%= j render "posts/watchlist_link", post: @post %>";
-document.getElementById("progress-<%= @post.id %>").innerHTML = "<%= j render "posts/progress", post: @post %>";
+document.getElementById("progress-<%= @post.id %>").innerHTML = "<%= j render(Posts::ProgressComponent.new(post: @post)) %>";

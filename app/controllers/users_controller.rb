@@ -6,5 +6,6 @@ class UsersController < ApplicationController
   
   def show
     @user = User.friendly.find(params[:id])
+    render(UserComponent.new(user: @user))
   end
 end

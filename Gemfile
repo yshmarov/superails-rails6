@@ -72,3 +72,4 @@ gem 'friendly_id', '~> 5.4.0'
 gem 'exception_notification'
 gem 'invisible_captcha'
 gem 'meta-tags'
+gem "view_component", require: "view_component/engine"
