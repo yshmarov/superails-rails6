@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 class Post < ApplicationRecord
   belongs_to :user, counter_cache: true
   has_many :comments, -> { order(created_at: :desc) }, as: :commentable, dependent: :destroy
