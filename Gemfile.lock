@@ -287,6 +287,8 @@ GEM
     stripe (5.34.0)
     thor (1.1.0)
     tilt (2.0.10)
+    traceroute (0.8.1)
+      rails (>= 3.0.0)
     turbolinks (5.2.1)
       turbolinks-source (~> 5.2)
     turbolinks-source (5.2.0)
@@ -350,6 +352,7 @@ DEPENDENCIES
   selenium-webdriver
   spring
   stripe
+  traceroute
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

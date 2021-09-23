@@ -1,0 +1,10 @@
+ignore_unreachable_actions:
+- ^devise\/
+- ^devise_invitable\/
+
+ignore_unused_routes:
+- ^devise\/
+- rails/conductor/action_mailbox/inbound_emails#edit
+- rails/conductor/action_mailbox/inbound_emails#update
+- rails/conductor/action_mailbox/inbound_emails#update
+- rails/conductor/action_mailbox/inbound_emails#destroy

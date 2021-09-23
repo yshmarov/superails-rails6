@@ -8,7 +8,7 @@ class CommentsController < ApplicationController
   end
 
   def create
-    @comment = @commentable.comments.build(comment_params.merge({ user: current_user }))
+    @comment = @commentable.comments.build(comment_params)
     if @comment.save
       redirect_to @commentable unless @commentable.is_a?(Comment)
       redirect_to @commentable.find_parent if @commentable.is_a?(Comment)
@@ -32,6 +32,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:body)
+    params.require(:comment).permit(:body).merge(user: current_user)
   end
 end
