@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class CheckoutController < ApplicationController
-  def create
+  def create # rubocop:todo Metrics/MethodLength
     @session = Stripe::Checkout::Session.create({
                                                   customer: current_user.stripe_customer_id,
                                                   success_url: posts_url,
