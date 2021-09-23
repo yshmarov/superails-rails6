@@ -1,0 +1,18 @@
+ignore_unreachable_actions:
+- ^rails/conductor/action_mailbox\/
+- ^devise\/
+- devise#_prefixes
+- comments#create
+- comments#new
+- comments#destroy
+- ^devise_invitable\/
+ignore_unused_routes:
+- ^rails/conductor/action_mailbox\/
+- ^devise\/
+- ^devise_invitable\/
+- comments/comments#create
+- comments/comments#new
+- comments/comments#destroy
+- posts/comments#create
+- posts/comments#new
+- posts/comments#destroy
