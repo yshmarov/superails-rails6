@@ -16,9 +16,11 @@
   <% end %>
   <% if post.tags.any? %>
     <div class='card-footer'>
-      <% post.tags.pluck(:name).each do |tag| %>
+      <% post.tags.each do |tag| %>
         <div class='badge bg-info'>
-          <%= tag %>
+          <%= link_to posts_path(q: { taggings_tag_id_eq: tag.id }) do %>
+            <%= tag.name %>
+          <% end %>
         </div>
       <% end %>
     </div>

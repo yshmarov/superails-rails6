@@ -6,7 +6,8 @@ class PostsController < ApplicationController
 
   def index
     @q = Post.order(created_at: :desc).ransack(params[:q])
-    @pagy, @posts = pagy(@q.result.includes(:user))
+    @pagy, @posts = pagy(@q.result.includes(:user, :taggings, taggings: :tag))
+    @tags = Tag.pluck(:name, :id)
   end
 
   def upvote
