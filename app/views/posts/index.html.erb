@@ -21,6 +21,8 @@
 
   <%= f.collection_select :user_name_cont, User.joins(:posts).distinct, :name, :name, include_blank: 'Author' %>
 
+  <%= f.select :taggings_tag_id_eq, @tags, { include_blank: true } %>
+
   <%= f.submit %>
 <% end %>
 
