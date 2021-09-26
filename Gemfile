@@ -73,3 +73,5 @@ gem 'exception_notification'
 gem 'invisible_captcha'
 gem 'meta-tags'
 gem "view_component", require: "view_component/engine"
+
+gem "rexml", "~> 3.2"

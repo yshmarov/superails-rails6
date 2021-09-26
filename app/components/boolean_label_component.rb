@@ -16,8 +16,8 @@ class BooleanLabelComponent < ViewComponent::Base
     when false
       'badge bg-danger'
     # else not needed if we already have a default in the initialize (value: false)
-    # else
-    #   'badge bg-warning'
+    else
+      'badge bg-warning'
     end
   end
 end
