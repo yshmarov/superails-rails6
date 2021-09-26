@@ -75,3 +75,5 @@ gem 'meta-tags'
 gem "view_component", require: "view_component/engine"
 
 gem "rexml", "~> 3.2"
+
+gem "lookbook"

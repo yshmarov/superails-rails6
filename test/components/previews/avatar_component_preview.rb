@@ -1,4 +1,7 @@
 class AvatarComponentPreview < ViewComponent::Preview
+  def default
+  end
+
   def with_custom_size_image
     render(AvatarComponent.new(user: User.where.not(image: nil).first, size: '500x300'))
   end

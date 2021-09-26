@@ -1,0 +1,4 @@
+<% [14, 20, 24, 32, 40, 64].each do |size| %>
+  <%= render AvatarComponent.new(user: User.where.not(image: nil).first, alt: "yaro", size: size) %>
+  <br>
+<% end %>
