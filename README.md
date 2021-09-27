@@ -1,5 +1,33 @@
 [![Rails Style Guide](https://img.shields.io/badge/code_style-rubocop-brightgreen.svg)](https://github.com/rubocop/rubocop-rails)
 
+credentials.yml example
+```
+google:
+  id: 123
+  secret: 123
+
+development:
+  github:
+    id: 123
+    secret: 123
+  stripe:
+    id: pk_test_123
+    secret: sk_test_123
+    webhook: whsec_123
+production:
+  github:
+    id: 123
+    secret: 123
+  stripe:
+    id: pk_test_123
+    secret: sk_test_123
+    webhook: whsec_123
+aws:
+  ses:
+    id: 123
+    secret: 123
+```
+
 re-calculate counter cache (post has many comments, comments_count)
 ```
 Post.find_each { |u| Post.reset_counters(u.id, :comments) }
