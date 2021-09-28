@@ -166,7 +166,7 @@ GEM
     multi_xml (0.6.0)
     multipart-post (2.1.1)
     nio4r (2.5.8)
-    nokogiri (1.12.4-x86_64-linux)
+    nokogiri (1.12.5-x86_64-linux)
       racc (~> 1.4)
     oauth2 (1.4.7)
       faraday (>= 0.8, < 2.0)
@@ -301,6 +301,9 @@ GEM
     tzinfo (2.0.4)
       concurrent-ruby (~> 1.0)
     unicode-display_width (2.1.0)
+    view_component (2.40.0)
+      activesupport (>= 5.0.0, < 8.0)
+      method_source (~> 1.0)
     warden (1.2.9)
       rack (>= 2.0.9)
     web-console (4.1.0)
@@ -361,6 +364,7 @@ DEPENDENCIES
   traceroute
   turbolinks (~> 5)
   tzinfo-data
+  view_component
   web-console (>= 4.1.0)
   webdrivers
   webpacker (~> 5.0)
