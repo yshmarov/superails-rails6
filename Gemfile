@@ -20,7 +20,7 @@ gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'
 # Use Redis adapter to run Action Cable in production
-# gem 'redis', '~> 4.0'
+gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -78,4 +78,9 @@ gem 'invisible_captcha'
 gem 'meta-tags'
 gem "view_component", require: "view_component/engine"
 
+gem 'importmap-rails'
 gem "jsbundling-rails", "~> 0.1.9"
+gem "cssbundling-rails", "~> 0.2.4"
+gem "turbo-rails", ">= 0.7.11"
+gem "stimulus-rails", ">= 0.4.0"
+gem "tailwindcss-rails", "~> 0.5.1"

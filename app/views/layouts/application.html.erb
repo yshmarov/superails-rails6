@@ -12,12 +12,15 @@
     <%= favicon_link_tag "favicon.ico" %>
 
     <script src="https://js.stripe.com/v3/"></script>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "inter-font", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application-esbuild", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application-esbuild", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
 
-    <%#= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%#= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
-
+    <%#= stylesheet_link_tag "application.main", "data-turbo-track": "reload" %>
+    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%#= stylesheet_link_tag "application" %>
   </head>
 
   <body>
@@ -25,7 +28,9 @@
     <div class="container">
       <%= render 'layouts/messages' %>
       <br>
-      <%= yield %>
+    <main class="container mx-auto mt-28 px-5 flex">
+        <%= yield %>
+    </main>
       <br>
     </div>
   </body>
