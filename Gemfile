@@ -77,3 +77,5 @@ gem 'exception_notification'
 gem 'invisible_captcha'
 gem 'meta-tags'
 gem "view_component", require: "view_component/engine"
+
+gem "jsbundling-rails", "~> 0.1.9"

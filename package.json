@@ -1,6 +1,8 @@
 {
     "name": "superails",
-    "private": true,
+    "private": "true",
+    "description": "Ruby on Rails screencasts",
+    "author": "Yaroslav Shmarov <yashm@outlook.com>",
     "dependencies": {
         "@fortawesome/fontawesome-free": "^5.15.3",
         "@popperjs/core": "^2.9.2",
@@ -8,6 +10,7 @@
         "@rails/activestorage": "^6.0.0",
         "@rails/ujs": "^6.0.0",
         "bootstrap": "^5.0.1",
+        "esbuild": "^0.13.8",
         "stimulus": "^2.0.0",
         "stimulus-character-counter": "^3.0.1",
         "stimulus-textarea-autogrow": "^3.0.0",
@@ -15,5 +18,8 @@
         "turbolinks": "^5.2.0"
     },
     "version": "0.1.0",
-    "devDependencies": {}
+    "devDependencies": {},
+    "scripts": {
+        "build": "esbuild app/javascript/*.* --bundle --outdir=app/assets/builds"
+    }
 }
