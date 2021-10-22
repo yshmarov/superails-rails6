@@ -18,7 +18,7 @@ module ApplicationHelper
 
   def deep_active_link_to_dropdown_item(path, &block)
     content_tag(:li) do
-      link_to path, class: "#{'active fw-bold' if current_page?(path)} dropdown-item", &block
+      link_to path, class: "#{'text-indigo-900' if current_page?(path)} flex items-center flex-wrap text-sm block py-3 pl-4 text-gray-900 no-underline whitespace-no-wrap bg-white hover:bg-pink-500 hover:text-white", &block
     end
   end
 

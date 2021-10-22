@@ -1,88 +1,19 @@
 <%= deep_active_link_to pricing_path do %>
-  <i class="fa fa-shopping-cart"></i>
   Pricing
 <% end %>
 <%= deep_active_link_to posts_path do %>
-  <i class="fa fa-gem"></i>
   Posts
 <% end %>
 <% if current_user %>
   <%= link_to "Manage Billing", billing_portal_create_path, method: :post, data: { disable_with: "validating..."}, class: 'nav-link' %>
   <%= deep_active_link_to new_post_path do %>
-    <i class="fa fa-plus"></i>
     New Post
   <% end %>
   <%= deep_active_link_to users_path do %>
-    <i class="fa fa-users"></i>
     Users
   <% end %>
   <%= deep_active_link_to new_user_invitation_path do %>
-    <i class="fa fa-user-plus"></i>
     Invite friend
   <% end %>
-
-
-          <a
-          href="/"
-          class="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none"
-          aria-label="Sign up"
-          title="Sign up"
-        >
-          Sign up
-        </a>
-
 <% end %>
-
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-    <%= render AvatarComponent.new(src: current_user.image, alt: current_user.name, display: current_user.image?) %>
-    <b><%= current_user.username %></b>
-  </a>
-  <ul class="dropdown-menu dropdown-menu-lg-end" aria-labelledby="navbarDropdown">
-    <%= deep_active_link_to_dropdown_item user_path(current_user) do %>
-      <i class="fa fa-user"></i>
-      <b>My Profile</b>
-    <% end %>
-    <%= deep_active_link_to_dropdown_item edit_user_registration_path do %>
-      <i class="fa fa-cog"></i>
-      <b>Account settings</b>
-    <% end %>
-    <%= link_to destroy_user_session_path, method: :delete, class: "dropdown-item" do %>
-      <i class="fa fa-sign-out-alt"></i>
-      <b>Sign out</b>
-    <% end %>
-  </ul>
-</li>
-
-
-<div
-  data-controller="dropdown"
-  data-action="click->dropdown#toggle click@window->dropdown#hide"
-  data-dropdown-open-value="false"
-  data-dropdown-active-target="#dropdown-button"
-  data-dropdown-active-class="bg-indigo-600"
-  data-dropdown-invisible-class="scale-95 opacity-0"
-  data-dropdown-visible-class="scale-100 opacity-100"
-  data-dropdown-entering-class="duration-300 ease-out"
-  data-dropdown-enter-timeout="300"
-  data-dropdown-leaving-class="duration-300 ease-in"
-  data-dropdown-leave-timeout="300"
-  aria-haspopup="true"
-  aria-expanded="false">
-
-  <div id="dropdown-button" class="relative inline-block px-4 py-2 mt-0 text-sm leading-none text-white no-underline bg-indigo-600 rounded">
-    <div role="button" tabindex="0" data-dropdown-target="button" class="inline-block select-none">
-      <span class="flex items-center inline-block appearance-none">
-        <span>Dropdown Example</span>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" class="w-4 h-4 text-white fill-current"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"></path></svg>
-      </span>
-    </div>
-    <div data-dropdown-target="menu" class="absolute right-0 hidden mt-2 transition transform scale-95 opacity-0">
-      <div class="w-32 overflow-hidden bg-white border rounded shadow">
-        <a href="#" class="block py-3 pl-8 text-gray-900 no-underline whitespace-no-wrap bg-white hover:bg-gray-300">Account</a>
-        <a href="#" class="block py-3 pl-8 text-gray-900 no-underline whitespace-no-wrap bg-white hover:bg-gray-300">Billing</a>
-        <a href="#" class="block py-3 pl-8 text-gray-900 no-underline whitespace-no-wrap bg-white border-t hover:bg-gray-300">Sign Out</a>
-      </div>
-    </div>
-  </div>
-</div>
+<%= render 'layouts/navigation/dropdown_menu' %>
