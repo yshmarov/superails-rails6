@@ -1,12 +1,38 @@
+<header id="header" class="header">
+  <nav class="bg-white shadow-lg">
+    <div class="container flex flex-wrap items-center justify-between px-2 py-3 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl">
+      <div class="relative flex items-center justify-center justify-between w-3/12 lg:w-auto lg:static lg:block lg:justify-start lg:w-2/12">
+        <%= link_to root_path, class:"flex items-center space-x-3" do %>
+          <%= image_tag "favicon.ico", height: "20", alt: "logo", class: "inline-block align-top" %>
+          <h1 class="ml-1 text-2xl font-extrabold tracking-wide text-indigo-800 uppercase">SupeRails</h1>
+        <% end %>
+      </div>
+      <div class="relative flex-row flex-wrap items-center justify-center flex-grow w-9/12 h-full mr-0 lg:flex group lg:w-7/12">
+        <ul class="flex items-center space-x-8 list-none lg:flex-row lg:ml-auto">
+            <%= render navigation_links_partial_path %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+
+
+
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
     <a class="navbar-brand" href="/">
       <%= image_tag "favicon.ico", height: "30", alt: "logo", class: "d-inline-block align-top" %>
       <b>SupeRails</b>
     </a>
+
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
+
+
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto">
         <%= deep_active_link_to pricing_path do %>
@@ -63,3 +89,6 @@
     </div>
   </div>
 </nav>
+
+
+
