@@ -6,29 +6,25 @@
     <%= display_meta_tags site: Rails.application.class.module_parent.name,
                           description: 'Moder Ruby on Rails screencasts',
                           keywords: 'ruby, rails, ruby-on-rails' %>
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag "favicon.ico" %>
-
     <script src="https://js.stripe.com/v3/"></script>
-    <%= stylesheet_link_tag "inter-font", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
-    <%= stylesheet_link_tag "application-esbuild", "data-turbo-track": "reload" %>
-    <%= javascript_include_tag "application-esbuild", "data-turbo-track": "reload" %>
-    <%= javascript_importmap_tags %>
 
-    <%#= stylesheet_link_tag "application.main", "data-turbo-track": "reload" %>
-    <%#= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%#= stylesheet_link_tag "application" %>
+    <%= stylesheet_link_tag "tailwind", "data-turbo-track": "reload" %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
+    <%#= javascript_importmap_tags %>
+
+    <%= favicon_link_tag '/assets/icons/favicon.ico', rel: 'apple-touch-icon', type: 'image/ico' %>
   </head>
 
-  <body>
+  <body class="flex flex-col flex-auto min-h-screen antialiased leading-normal text-gray-900 font-body" data-controller-name=<%= controller_name %> data-action-name=<%= action_name %>>
     <%= render 'layouts/header' %>
     <div class="container">
       <%= render 'layouts/messages' %>
       <br>
-    <main class="container mx-auto mt-28 px-5 flex">
+    <main class="container flex px-5 mx-auto mt-28">
         <%= yield %>
     </main>
       <br>
