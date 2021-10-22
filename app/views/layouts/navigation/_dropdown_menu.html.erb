@@ -18,11 +18,11 @@
 
       <div role="button" tabindex="0" data-dropdown-target="button" class="inline-block select-none">
         <span class="flex items-center inline-block appearance-none">
-          <span><%= current_user.email.upcase %></span>
+          <span><%= current_user.name.upcase %></span>
         </span>
       </div>
 
-      <div data-dropdown-target="menu" class="absolute right-0 hidden mt-2 transition transform scale-100 opacity-0">
+      <div data-dropdown-target="menu" class="absolute right-0 z-10 hidden mt-2 transition transform scale-100 opacity-0 top-10">
         <div class="overflow-hidden text-base font-medium text-left bg-white border rounded shadow w-60">
           <p class="flex flex-wrap block py-3 pl-4 text-gray-900 no-underline whitespace-no-wrap bg-white border-b">
             <span class="w-full font-medium"><%= current_user.name.capitalize if signed_in? %></span>
