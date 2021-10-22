@@ -1,31 +1,5 @@
 /* app background color */
 
-html,
-body {
-    height: 100%;
-    word-break: break-all;
-    background-color: aquamarine;
-}
-
-a {
-    text-decoration: none;
-}
-
-// footer always on the bottom
-html {
-    margin: 0;
-}
-
-body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-}
-
-footer {
-    margin-top: auto;
-}
-
 .comment {
     margin: 1em 0em 1em 1em;
     padding-left: 1em;

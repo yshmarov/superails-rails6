@@ -14,7 +14,7 @@ module.exports = {
     theme: {
         extend: {
             fontFamily: {
-                display: ["Raleway", ...defaultTheme.fontFamily.sans],
+                display: ["Noto Serif Display", ...defaultTheme.fontFamily.sans],
                 body: ["Raleway", ...defaultTheme.fontFamily.sans],
             },
             colors: {
