@@ -1,7 +1,316 @@
-<div class='text-center'>
-  <h1>Coming soon</h1>
-  <i class="far fa-gem fa-spin fa-3x"></i>
-</div>
-<%= render BooleanLabelComponent.new(value: 'abc') %>
-<%= render BooleanLabelComponent.new(value: true) %>
-<%= render BooleanLabelComponent.new(value: false) %>
+<!-- section one -->
+<section class="mb-10">
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
+    <div class="flex flex-col items-center justify-between lg:flex-row">
+      <div class="mb-10 lg:max-w-lg lg:pr-5 lg:mb-0">
+        <div class="max-w-xl mb-6">
+          <div>
+            <p class="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-pink-900 uppercase rounded-full bg-pink-accent-100">
+              Brand new
+            </p>
+          </div>
+          <h2 class="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-6xl sm:leading-none font-display">
+            Ruby on Rails <br class="hidden md:block" />
+            screencasts
+            <span class="inline-block mt-8 text-red-accent-700">SupeRails</span>
+          </h2>
+          <p class="text-base text-gray-700 md:text-lg">
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae. explicabo.
+          </p>
+        </div>
+        <div class="flex flex-col items-center md:flex-row">
+          <a
+            href="/"
+            class="inline-flex items-center justify-center w-full h-12 px-6 mb-3 font-medium tracking-wide text-white transition duration-200 rounded-full shadow-md md:w-auto md:mr-4 md:mb-0 bg-cyan-accent-700 hover:bg-cyan-accent-400 focus:shadow-outline focus:outline-none"
+          >
+            <span class="mr-3 text-lg font-bold">Ignite your Learning</span>
+            <%= image_tag 'superails_rocket.svg', alt: 'Begin a new start', class:"object-cover w-6 h-6"%>
+          </a>
+        </div>
+      </div>
+      <div class="relative lg:w-3/4">
+
+        <%= image_tag 'superails_superbg.jpg', alt: 'Begin a new start', class:"object-cover w-full h-full"%>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- section two customers-->
+<section class="mb-10 border-t">
+  <div class="container px-5 py-24 mx-auto lg:px-16">
+    <div class="flex flex-col w-full mb-8 text-center">
+      <span class="mb-4 text-sm font-medium tracking-wide text-gray-500 uppercase"> The best front end teams use Wickedtemplates to state their presence. <a href="https://www.wickedtemplates.com/expo.html" class="font-semibold text-cyan-400 lg:mb-0 hover:text-cyan-500">Our customers »</a>
+      </span>
+    </div>
+    <div class="mx-auto text-center">
+      <div class="grid grid-cols-5 gap-4 mx-auto lg:grid-cols-5">
+        <div>
+          <img class="h-4 mx-auto lg:h-12" src="https://d33wubrfki0l68.cloudfront.net/5a364f2e7cfeadd0f603cdfeda83f5cd0509770d/3f0ae/images/logos/logoone.svg" alt="Figma">
+        </div>
+        <div>
+          <img class="h-4 mx-auto lg:h-12" src="https://d33wubrfki0l68.cloudfront.net/ab0d1eeefb9cddb55f05f1601b2ae3fbae9317a9/5bfbe/images/logos/logotwo.svg" alt="Framer">
+        </div>
+        <div>
+          <img class="h-4 mx-auto lg:h-12" src="https://d33wubrfki0l68.cloudfront.net/2fea2d550675d7cf3bb77a515487bce6c086051b/951f5/images/logos/logothree.svg" alt="Sketch ">
+        </div>
+        <div>
+          <img class="h-4 mx-auto lg:h-12" src="https://d33wubrfki0l68.cloudfront.net/f9b8da8b1442382848d30275dc2d0337d14a04c9/dc8f4/images/logos/logofour.svg" alt="Sketch ">
+        </div>
+        <div>
+          <img class="h-4 mx-auto lg:h-12" src="https://d33wubrfki0l68.cloudfront.net/07ddf740e29509004147c6a83c09f299366546c9/03a26/images/logos/logofive.svg" alt="Invision">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- section three content-->
+<section class="mb-10">
+  <%= image_tag 'trangle.svg', class:"mx-auto my-10 w-60" %>
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
+    <div class="w-full mb-10 md:mx-auto sm:text-center lg:max-w-full md:mb-12">
+      <h2 class="max-w-full mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-5xl md:mx-auto font-display">
+        Join thousands on Drifting Ruby to stay on top of Ruby development.
+      </h2>
+      <p class="text-base text-gray-700 md:text-lg">
+        Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque rem aperiam, eaque ipsa quae.
+      </p>
+    </div>
+    <div class="grid max-w-screen-lg gap-8 row-gap-10 mx-auto lg:grid-cols-2">
+      <div class="flex flex-col max-w-md sm:mx-auto sm:flex-row">
+        <div class="mr-4">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 bg-pink-100 rounded-full">
+            <svg class="w-8 h-8 text-deep-purple-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path></svg>
+          </div>
+        </div>
+        <div>
+          <h6 class="mb-3 text-xl font-bold leading-5">The deep ocean</h6>
+          <p class="mb-3 text-sm text-gray-900">
+            A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear. I didn't even know we were calling him Big Bear. We never had the chance to.
+          </p>
+          <a href="/" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-pink-accent-400 hover:text-pink-800">Learn more</a>
+        </div>
+      </div>
+      <div class="flex flex-col max-w-md sm:mx-auto sm:flex-row">
+        <div class="mr-4">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 bg-pink-100 rounded-full">
+            <svg class="w-8 h-8 text-deep-purple-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+          </div>
+        </div>
+        <div>
+          <h6 class="mb-3 text-xl font-bold leading-5">When has justice</h6>
+          <p class="mb-3 text-sm text-gray-900">
+            Rough pomfret lemon shark plownose chimaera southern sandfish kokanee northern sea robin Antarctic cod. Yellow-and-black triplefin gulper South American Lungfish mahi-mahi, butterflyfish glass catfish soapfish ling gray mullet!
+          </p>
+          <a href="/" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-pink-accent-400 hover:text-pink-800">Learn more</a>
+        </div>
+      </div>
+      <div class="flex flex-col max-w-md sm:mx-auto sm:flex-row">
+        <div class="mr-4">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 bg-pink-100 rounded-full">
+            <svg class="w-8 h-8 text-deep-purple-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+          </div>
+        </div>
+        <div>
+          <h6 class="mb-3 text-xl font-bold leading-5">Organically grow</h6>
+          <p class="mb-3 text-sm text-gray-900">
+            A slice of heaven. O for awesome, this chocka full cuzzie is as rip-off as a cracker. Meanwhile, in behind the bicycle shed, Hercules Morse, as big as a horse and Mrs Falani were up to no good with a bunch of crook pikelets.
+          </p>
+          <a href="/" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-pink-accent-400 hover:text-pink-800">Learn more</a>
+        </div>
+      </div>
+      <div class="flex flex-col max-w-md sm:mx-auto sm:flex-row">
+        <div class="mr-4">
+          <div class="flex items-center justify-center w-12 h-12 mb-4 bg-pink-100 rounded-full">
+            <svg class="w-8 h-8 text-deep-purple-accent-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>
+          </div>
+        </div>
+        <div>
+          <h6 class="mb-3 text-xl font-bold leading-5">A slice of heaven</h6>
+          <p class="mb-3 text-sm text-gray-900">
+            Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling. Inspiring, invest synergy capacity building, white paper; silo, unprecedented challenge B-corp problem-solvers.
+          </p>
+          <a href="/" aria-label="" class="inline-flex items-center font-semibold transition-colors duration-200 text-pink-accent-400 hover:text-pink-800">Learn more</a>
+        </div>
+      </div>
+    </div>
+
+
+
+  </div>
+</section>
+
+<!-- section four blog posts -->
+<section class="mb-10">
+  <%= image_tag 'rose.svg', class:"mx-auto my-10 w-60" %>
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
+    <div class="w-full md:mx-auto sm:text-center lg:max-w-full">
+      <h2 class="max-w-full font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-5xl md:mx-auto font-display">
+        Latest blog posts
+      </h2>
+    </div>
+  <div class="px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:pt-20">
+    <div class="grid gap-8 lg:grid-cols-3 sm:max-w-sm sm:mx-auto lg:max-w-full">
+      <div class="p-8 bg-white border rounded shadow-sm">
+        <p class="mb-3 text-xs font-semibold tracking-wide uppercase">
+          <a href="/" class="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800" aria-label="Category">weekend</a>
+          <span class="text-gray-600">— 1 Feb 2020</span>
+        </p>
+        <a href="/" aria-label="Article" title="Jingle Bells" class="inline-block mb-3 text-2xl font-bold leading-5 text-black transition-colors duration-200 hover:text-deep-purple-accent-400">Jingle Bells</a>
+        <p class="mb-5 text-gray-700">
+          Some pilots get picked and become television programs. Some don't, become nothing.
+        </p>
+      </div>
+      <div class="p-8 bg-white border rounded shadow-sm">
+        <p class="mb-3 text-xs font-semibold tracking-wide uppercase">
+          <a href="/" class="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800" aria-label="Category">holidays</a>
+          <span class="text-gray-600">— 15 Nov 2020</span>
+        </p>
+        <a href="/" aria-label="Article" title="Happy new Year" class="inline-block mb-3 text-2xl font-bold leading-5 text-black transition-colors duration-200 hover:text-deep-purple-accent-400">Happy new Year</a>
+        <p class="mb-5 text-gray-700">
+          Pommy ipsum smeg head whizz morris dancers come hither, bugger codswallop gob. Taking the mick middle class bog.
+        </p>
+      </div>
+      <div class="p-8 bg-white border rounded shadow-sm">
+        <p class="mb-3 text-xs font-semibold tracking-wide uppercase">
+          <a href="/" class="transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800" aria-label="Category">programming</a>
+          <span class="text-gray-600">— 28 Dec 2020</span>
+        </p>
+        <a href="/" aria-label="Article" title="Why i love C++" class="inline-block mb-3 text-2xl font-bold leading-5 text-black transition-colors duration-200 hover:text-deep-purple-accent-400">Why i love C++</a>
+        <p class="mb-5 text-gray-700">
+          Sportacus andrew weatherall goose Refined gentlemen super mario des lynam alpha trion zap rowsdower.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="mb-10">
+  <%= image_tag 'trangle.svg', class:"mx-auto my-10 w-60" %>
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-10">
+    <div class="w-full md:mx-auto sm:text-center lg:max-w-full">
+      <h2 class="max-w-full font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-5xl md:mx-auto font-display">
+        Latest screencasts
+      </h2>
+    </div>
+  <div class="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div class="grid gap-5 row-gap-5 mb-8 lg:grid-cols-4 sm:grid-cols-2">
+      <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <%= image_tag 'screencast-example.jpg', alt: 'Screencast', class:"object-cover w-full h-48"%>
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">The doctor said</h6>
+              <p class="text-sm text-gray-900">
+                Sportacus andrew weatherall goose Refined gentlemen super mario des lynam alpha trion zap rowsdower.
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <%= image_tag 'screencast-example.jpg', alt: 'Screencast', class:"object-cover w-full h-48"%>
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">Skate ipsum dolor</h6>
+              <p class="text-sm text-gray-900">
+                Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <%= image_tag 'screencast-example.jpg', alt: 'Screencast', class:"object-cover w-full h-48"%>
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">They urge you</h6>
+              <p class="text-sm text-gray-900">
+                A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear.
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <%= image_tag 'screencast-example.jpg', alt: 'Screencast', class:"object-cover w-full h-48"%>
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">Baseball ipsum dolor</h6>
+              <p class="text-sm text-gray-900">
+                Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <%= image_tag 'screencast-example.jpg', alt: 'Screencast', class:"object-cover w-full h-48"%>
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">The doctor said</h6>
+              <p class="text-sm text-gray-900">
+                Sportacus andrew weatherall goose Refined gentlemen super mario des lynam alpha trion zap rowsdower.
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <%= image_tag 'screencast-example.jpg', alt: 'Screencast', class:"object-cover w-full h-48"%>
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">Skate ipsum dolor</h6>
+              <p class="text-sm text-gray-900">
+                Bulbasaur Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <%= image_tag 'screencast-example.jpg', alt: 'Screencast', class:"object-cover w-full h-48"%>
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">They urge you</h6>
+              <p class="text-sm text-gray-900">
+                A flower in my garden, a mystery in my panties. Heart attack never stopped old Big Bear.
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+      <a href="/" aria-label="View Item" class="inline-block overflow-hidden duration-300 transform bg-white rounded shadow-sm hover:-translate-y-2">
+        <div class="flex flex-col h-full">
+          <%= image_tag 'screencast-example.jpg', alt: 'Screencast', class:"object-cover w-full h-48"%>
+          <div class="flex-grow border border-t-0 rounded-b">
+            <div class="p-5">
+              <h6 class="mb-2 font-semibold leading-5">Baseball ipsum dolor</h6>
+              <p class="text-sm text-gray-900">
+                Bro ipsum dolor sit amet gaper backside single track, manny Bike epic clipless. Schraeder drop gondy.
+              </p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="text-center">
+      <a
+        href="/"
+        class="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-pink-accent-400 hover:bg-pink-accent-700 focus:shadow-outline focus:outline-none"
+      >
+        Watch more
+      </a>
+    </div>
+  </div>
+</section>
+<%#= render BooleanLabelComponent.new(value: 'abc') %>
+<%#= render BooleanLabelComponent.new(value: true) %>
+<%#= render BooleanLabelComponent.new(value: false) %>
