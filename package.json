@@ -4,7 +4,6 @@
     "description": "Ruby on Rails screencasts",
     "author": "Yaroslav Shmarov <yashm@outlook.com>",
     "dependencies": {
-        "@fortawesome/fontawesome-free": "^5.15.3",
         "@hotwired/stimulus": "^3.0.1",
         "@hotwired/turbo-rails": "^7.0.1",
         "@popperjs/core": "^2.9.2",
@@ -16,7 +15,6 @@
         "@tailwindcss/line-clamp": "^0.2.2",
         "@tailwindcss/typography": "^0.4.1",
         "autoprefixer": "^10.3.7",
-        "bootstrap": "^5.0.1",
         "esbuild": "^0.13.8",
         "postcss": "^8.3.10",
         "postcss-flexbugs-fixes": "^5.0.2",
