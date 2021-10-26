@@ -2,30 +2,23 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width,initial-scale=1">
-
     <%= display_meta_tags site: Rails.application.class.module_parent.name,
                           description: 'Moder Ruby on Rails screencasts',
                           keywords: 'ruby, rails, ruby-on-rails' %>
-
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= favicon_link_tag "favicon.ico" %>
-
     <script src="https://js.stripe.com/v3/"></script>
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbo-track": "reload" %>
+    <%= favicon_link_tag '/assets/icons/favicon.ico', rel: 'apple-touch-icon', type: 'image/ico' %>
   </head>
-
-  <body>
+  <body class="flex flex-col flex-auto min-h-screen antialiased leading-normal text-gray-900 font-body" data-controller-name=<%= controller_name %> data-action-name=<%= action_name %>>
+    <%= render 'layouts/messages' %>
     <%= render 'layouts/header' %>
-    <div class="container">
-      <%= render 'layouts/messages' %>
-      <br>
-      <%= yield %>
-      <br>
-    </div>
+    <main class="container px-5 mx-auto mt-20" id="content">
+        <%= yield %>
+    </main>
   </body>
   <footer>
     <br>

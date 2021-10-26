@@ -1,0 +1,19 @@
+<%= deep_active_link_to pricing_path do %>
+  Pricing
+<% end %>
+<%= deep_active_link_to posts_path do %>
+  Posts
+<% end %>
+<% if current_user %>
+  <%= link_to "Manage Billing", billing_portal_create_path, method: :post, data: { disable_with: "validating..."}, class: 'nav-link' %>
+  <%= deep_active_link_to new_post_path do %>
+    New Post
+  <% end %>
+  <%= deep_active_link_to users_path do %>
+    Users
+  <% end %>
+  <%= deep_active_link_to new_user_invitation_path do %>
+    Invite friend
+  <% end %>
+<% end %>
+<%= render 'layouts/navigation/dropdown_menu' %>

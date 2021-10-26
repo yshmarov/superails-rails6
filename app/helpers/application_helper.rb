@@ -5,19 +5,20 @@ module ApplicationHelper
 
   def active_link_to(name, path)
     content_tag(:li, class: "#{'active fw-bold' if current_page?(path)} nav-item") do
-      link_to name, path, class: 'nav-link'
+      link_to name, path, class: "w-full px-4 py-2 text-base font-semibold text-center text-white transition duration-200 ease-in bg-pink-600 rounded-lg shadow-md hover:bg-pink-700 focus:ring-pink-500 focus:ring-offset-pink-200 focus:outline-none focus:ring-2 focus:ring-offset-2"
     end
   end
 
   def deep_active_link_to(path, &block)
     content_tag(:li, class: "#{'active fw-bold' if current_page?(path)} nav-item") do
-      link_to path, class: 'nav-link', &block
+      link_to path, class: 'nav-link font-medium tracking-wide text-gray-700 transition-colors
+      duration-200 hover:text-deep-purple-accent-400', title: path.to_s, &block
     end
   end
 
   def deep_active_link_to_dropdown_item(path, &block)
     content_tag(:li) do
-      link_to path, class: "#{'active fw-bold' if current_page?(path)} dropdown-item", &block
+      link_to path, class: "#{'text-indigo-900' if current_page?(path)} flex items-center flex-wrap text-sm block py-3 pl-4 text-gray-900 no-underline whitespace-no-wrap bg-white hover:bg-pink-500 hover:text-white", &block
     end
   end
 

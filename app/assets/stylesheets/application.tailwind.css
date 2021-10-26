@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* SUPERAILS STYLE */
+
+@import "./components/superails.scss";
+@import 'tom-select/dist/css/tom-select.css';
+h2 {
+    @apply font-display;
+}
+
+
+/* html, */
+
+
+/* body { */
+
+
+/* height: 100%; */
+
+
+/* background-color: AntiqueWhite; */
+
+
+/* word-break: break-all; */
+
+
+/* font-family: Raleway; */
+
+
+/* } */
+
+
+/* @import "application-esbuild.scss"; */
+
+
+/* @import "rouge"; */
