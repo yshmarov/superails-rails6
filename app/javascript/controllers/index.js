@@ -3,13 +3,6 @@
 
 import { application } from "./application";
 
-// Eager load all controllers defined in the import map under controllers/**/*_controller
-// import { eagerLoadControllersFrom } from "@hotwired/stimulus-loading"
-// eagerLoadControllersFrom("controllers", application)
-// Lazy load controllers as they appear in the DOM (remember not to preload controllers in import map!)
-// import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
-// lazyLoadControllersFrom("controllers", application)
-
 import TextareaAutogrow from "stimulus-textarea-autogrow";
 application.register("textarea-autogrow", TextareaAutogrow);
 
@@ -21,16 +14,3 @@ application.register("hello", HelloController)
 
 import Dropdown from "./dropdown_controller";
 application.register("dropdown", Dropdown);
-
-// import { Application } from "stimulus"
-// import { definitionsFromContext } from "stimulus/webpack-helpers"
-
-// import TextareaAutogrow from "stimulus-textarea-autogrow"
-// import CharacterCounter from "stimulus-character-counter"
-
-// const application = Application.start()
-// const context = require.context("../controllers", true, /\.js$/)
-// application.load(definitionsFromContext(context))
-
-// application.register("textarea-autogrow", TextareaAutogrow)
-// application.register("character-counter", CharacterCounter)
