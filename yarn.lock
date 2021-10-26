@@ -810,6 +810,11 @@ jsonfile@^6.0.1:
   optionalDependencies:
     graceful-fs "^4.1.6"
 
+lightgallery.js@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/lightgallery.js/-/lightgallery.js-1.4.0.tgz#f4b43b01b2acce43bd7e6d8dbcf1d5541cd2fb03"
+  integrity sha512-TK7auNMSz0sPjotq/VtKH/fe8GPkVRlmFf8F3zVsbFccLJL4r3U1VON+IggyE8Wy04QwbFQxTIIMqL7blibGSA==
+
 lilconfig@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/lilconfig/-/lilconfig-2.0.3.tgz#68f3005e921dafbd2a2afb48379986aa6d2579fd"
@@ -1458,6 +1463,13 @@ stimulus-character-counter@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/stimulus-character-counter/-/stimulus-character-counter-3.0.1.tgz#a02d56fdb8cb095006be8ff4ac3b7d21ee0e4227"
   integrity sha512-0GkOwPtZKpV5SZqJFFOwg7aASMiNsO/jjIxHynPHYlkui6WdltAPQDcoLdGzhKBGp/G6M2pYZJzgVRR5a95zZQ==
+
+stimulus-lightbox@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/stimulus-lightbox/-/stimulus-lightbox-2.0.0.tgz#bb7b07260c52aee9069b28d6a7aed5e0e674324a"
+  integrity sha512-AqJXptNC59/LyY4y0tFtmPUEDbFwG7oJe8wDN7ULnC1mrqEpA8LFy3ROsHhnQTqpzH7otebPu1/OTdSKnaVF2w==
+  dependencies:
+    lightgallery.js "^1.4.0"
 
 stimulus-textarea-autogrow@^3.0.0:
   version "3.0.0"
