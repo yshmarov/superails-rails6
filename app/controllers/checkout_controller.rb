@@ -12,8 +12,6 @@ class CheckoutController < ApplicationController
                                                   ],
                                                   mode: 'subscription'
                                                 })
-    respond_to do |format|
-      format.js
-    end
+    redirect_to @session.url
   end
 end
